@@ -53,7 +53,7 @@ the API. Team home page shows simplified puzzle, message, and schedule indicies.
 
 **Objective:** Messages belong to Teams and can be created, read, edited and destroyed through the API. Frontend features index view, form, and detail view.
 
-### Phase 4: Schedule API and components (2 days)
+### Phase 5: Schedule API and components (2 days)
 
 **Objective:**  Events belong to Teams and can be created, read, edited and destroyed through the API. Frontend features index view, form, and detail view.
 

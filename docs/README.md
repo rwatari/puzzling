@@ -18,7 +18,6 @@ sufficient CSS styling:
 - [ ] Teams
 - [ ] Puzzles
 - [ ] Team Message Board
-- [ ] Home View
 - [ ] Scheduling
 - [ ] Production README
 
@@ -44,16 +43,21 @@ sufficient CSS styling:
 ### Phase 2: Team API and components (2 days)
 
 **Objective:** Teams can be created, read, edited and destroyed through
-the API.
+the API. Team home page shows simplified puzzle, message, and schedule indicies.
 
-### Phase 3: Puzzles/Messages/Events API and components (4 days)
+### Phase 3: Puzzles API and components (2 days)
 
-**Objective:** Puzzles/Messages/Events belong to Teams that can be created, read, edited and destroyed through the API.
+**Objective:** Puzzles belong to Teams and can be created, read, edited and destroyed through the API. Frontend features index view, form, and detail view.
 
-### Phase 4: Comments API and components (1 day)
+### Phase 4: Messages API and components (1 days)
 
-**Objective:** Puzzles, Messages, and Events can have comments.
+**Objective:** Messages belong to Teams and can be created, read, edited and destroyed through the API. Frontend features index view, form, and detail view.
+
+### Phase 4: Schedule API and components (2 days)
+
+**Objective:**  Events belong to Teams and can be created, read, edited and destroyed through the API. Frontend features index view, form, and detail view.
 
 ### Bonus Features (TBD)
+- [ ] Comments
 - [ ] Google Docs integration
 - [ ] Messaging

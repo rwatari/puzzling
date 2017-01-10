@@ -5,7 +5,6 @@ column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
 username        | string    | not null, indexed, unique
-email           | string    | not null, indexed, unique
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
 
@@ -14,7 +13,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 name        | string    | not null
-hunt       | string    | not null
+hunt_name   | string    | not null
 admin_id    | integer   | not null, foreign key (references users), indexed
 
 ## memberships
@@ -30,7 +29,7 @@ column name | data type | details
 id          | integer   | not null, primary key
 team_id     | integer   | not null, foreign key (references teams), indexed
 title       | string    | not null
-description | string    |
+description | text      |
 solved      | boolean   | not null, default: false
 
 ## solvings
@@ -49,7 +48,7 @@ body        | text      | not null
 author_id   | integer   | not null, foreign key (references users), indexed
 messageable | references| not null, foreign key (references teams or puzzles), polymorphic, indexed
 
-## events
+## schedule_events
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
@@ -59,7 +58,7 @@ start_date  | datetime  | not null
 end_date    | datetime  | not null
 team_id     | integer   | not null, foreign key (references teams), indexed
 
-## comments
+## comments (bonus)
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key

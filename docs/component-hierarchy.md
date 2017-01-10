@@ -3,7 +3,7 @@
 **AuthFormContainer**
  - AuthForm
 
-**HomeContainer**
+**App**
  - Home
  - NavBar
 
@@ -14,7 +14,7 @@
 
 **MessageIndexContainer**
  - MessageIndex
-  + MessageListItem
+  + MessageIndexItem
 
 **MessageFormContainer**
  - MessageForm
@@ -22,26 +22,26 @@
 **MessageDetailContainer**
  - MessageDetail
  - CommentIndex
-  + CommentListItem
+  + CommentIndexItem
   + CommentForm
 
 **ScheduleIndexContainer**
  - DayIndex
-  + EventIndex
-   * EventListItem
+  + ScheduleEventIndex
+   * ScheduleEventIndexItem
 
-**EventFormContainer**
- - EventForm
+**ScheduleEventFormContainer**
+ - ScheduleEventForm
 
-**EventDetailContainer**
- - EventDetail
+**ScheduleEventDetailContainer**
+ - ScheduleEventDetail
  - CommentIndex
-  + CommentListItem
+  + CommentIndexItem
   + CommentForm
 
 **PuzzleIndexContainer**
  - PuzzleIndex
-  + PuzzleListItem
+  + PuzzleIndexItem
 
 **PuzzleFormContainer**
  - PuzzleForm
@@ -49,7 +49,7 @@
 **PuzzleDetailContainer**
  - PuzzleDetail
  - CommentIndex
-  + CommentListItem
+  + CommentIndexItem
   + CommentForm
 
 ## Routes
@@ -57,14 +57,14 @@
 |Path   | Component   |
 |-------|-------------|
 | "/" | "AuthFormContainer" |
-| "/home" | "HomeContainer" |
+| "/home" | "App" |
 | "/teams/:teamId" | "TeamContainer" |
-| "/teams/:teamId/messages" | "MessageIndexContainer" |
-| "/teams/:teamId/new-message" | "MessageFormContainer" |
-| "/teams/:teamId/messages/:messageId" | "MessageDetailContainer" |
-| "/teams/:teamId/schedule" | "ScheduleContainer" |
-| "/teams/:teamId/new-event" | "EventFormContainer" |
-| "/teams/:teamId/schedule/:eventId" | "EventDetailContainer" |
-| "/teams/:teamId/puzzles" | "PuzzleIndexContainer" |
-| "/teams/:teamId/new-puzzle" | "PuzzleFormContainer" |
-| "/teams/:teamId/puzzles/:puzzleId" | "PuzzleDetailContainer" |
+| "/messages" | "MessageIndexContainer" |
+| "/new-message" | "MessageFormContainer" |
+| "/messages/:messageId" | "MessageDetailContainer" |
+| "/schedule" | "ScheduleContainer" |
+| "/new-schedule-event" | "ScheduleEventFormContainer" |
+| "/schedule/:scheduleEventId" | "ScheduleEventDetailContainer" |
+| "/puzzles" | "PuzzleIndexContainer" |
+| "/new-puzzle" | "PuzzleFormContainer" |
+| "/puzzles/:puzzleId" | "PuzzleDetailContainer" |

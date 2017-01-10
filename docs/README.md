@@ -29,11 +29,11 @@ sufficient CSS styling:
 * [DB schema][schema]
 * [Sample State][sample-state]
 
-[wireframes]: wireframes
-[components]: component-hierarchy.md
-[sample-state]: sample-state.md
-[api-endpoints]: api-endpoints.md
-[schema]: schema.md
+[wireframes]: https://github.com/rwatari/puzzling/tree/master/docs/wireframes
+[components]: https://github.com/rwatari/puzzling/tree/master/docs/component-hierarchy.md
+[sample-state]: https://github.com/rwatari/puzzling/tree/master/docs/sample-state.md
+[api-endpoints]: https://github.com/rwatari/puzzling/tree/master/docs/api-endpoints.md
+[schema]: https://github.com/rwatari/puzzling/tree/master/docs/schema.md
 
 ## Implementation Timeline
 

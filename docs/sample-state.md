@@ -1,66 +1,75 @@
 ```js
 {
-  session: {
-    currentUser: {
-      id: 1,
-      username: "app-academy"
-    },
-    errors: []
+  currentUser: {
+    id: 1,
+    username: "app-academy"
   },
   forms: {
+    session: {errors: []},
     createPuzzle: {errors: ["body can't be blank"]},
     createTeam: {errors: []},
     createMessage: {errors: []},
     createEvent: {errors: []}
   },
-  team_index: {
+  teams: {
     1: {
+      id: 1,
       name: "Puzzle Maniacs",
       hunt: "CPC"
     },
-    2: {
+    53: {
+      id: 53,
       name: "Puzzle Maniacs",
-      body: "MMH"
+      hunt: "MMH"
       }
     }
   },
-  message_index: {
+  messages: {
     1: {
+      id: 1,
+      messageableType: "team",
+      messageableId: 53,
       title: "What is a Caesar Cipher?",
-      body_snippet: "I'm having trouble solv",
-      author_name: "hunter21"
+      body: "I'm having trouble solving this puzzle",
+      authorName: "hunter21",
+      updatedAt: "Fri, 13 Jan 2017 15:10:55 +0000"
     },
     2: {
+      id: 2,
+      messageableType: "team",
+      messageableId: 53,
       title: "Need eyes on 'Mourning Glory'",
-      body_snippet: "There's lots of blanks",
-      author_name: "cats_and_dogs"
+      body: "There's lots of blanks to fill in and we don't have much time! Please help if you're free!",
+      authorName: "cats_and_dogs",
+      updatedAt: "Sun, 15 Jan 2017 15:26:55 +0000"
     }
   },
-  message_detail: {
-    title: "Need eyes on 'Mourning Glory'",
-    body: "There's lots of blanks to fill in and we don't have much time! Please help if you're free!",
-    author_name: "cats_and_dogs",
-    updated_at: "Sun, 15 Jan 2017 15:26:55 +0000"
-  },
-  event_index: {
+  scheduleEvents: {
     1: {
+      id: 1,
+      teamId: 53,
       name: "Runaround at noon!",
-      start_date: "Sun, 15 Jan 2017 12:00:00 +0000"
+      startDate: "Sun, 15 Jan 2017 12:00:00 +0000"
     }
   },
-  event_detail: {
+  scheduleEventDetail: {
+    id: 1,
+    teamId: 53,
     name: "Runaround at noon!",
     description: "Kresge Auditorium. Bring the clues from 'Disco Ball' and some good running shoes."
-    start_date: "Sun, 15 Jan 2017 12:00:00 +0000",
-    end_date: "Sun, 15 Jan 2017 13:00:00 +0000"
+    startDate: "Sun, 15 Jan 2017 12:00:00 +0000",
+    endDate: "Sun, 15 Jan 2017 13:00:00 +0000"
   }
+  // bonus
   comments: {
-    1: {
+    6: {
+      commentableType: 'puzzle',
+      commentableId:
       body: "This puzzle is really hard",
       author_name: "jamesissocool",
       created_at: "Sun, 15 Jan 2017 10:45:37 +0000",
     },
-    2: {
+    8: {
       body: "Has anyone seen something like this before?",
       author_name: "shalalalala",
       created_at: "Sun, 15 Jan 2017 10:44:15 +0000",

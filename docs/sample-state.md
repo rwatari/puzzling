@@ -1,15 +1,15 @@
 ```js
 {
-  currentUser: {
+  session: {
     id: 1,
     username: "app-academy"
   },
-  forms: {
-    session: {errors: []},
-    createPuzzle: {errors: ["body can't be blank"]},
-    createTeam: {errors: []},
-    createMessage: {errors: []},
-    createEvent: {errors: []}
+  formErrors: {
+    session: [],
+    puzzle: ["body can't be blank"],
+    team: [],
+    message: [],
+    scheduleEvent: []
   },
   teams: {
     1: {

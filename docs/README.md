@@ -1,9 +1,9 @@
 # Puzzling
 
-* [Heroku link (TODO)][heroku]
+* [Heroku link][heroku]
 * [Trello link][trello]
 
-[heroku]: http://www.herokuapp.com
+[heroku]: https://puzzling-app.herokuapp.com/
 [trello]: https://trello.com/b/D61M23Ps/puzzling
 
 ## Minimum Viable Product

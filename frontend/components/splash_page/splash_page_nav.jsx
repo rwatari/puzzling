@@ -61,6 +61,7 @@ class SplashPageNav extends React.Component {
         </div>
         <Modal
           className="session-form-modal"
+          contentLabel="SessionForm"
           isOpen={this.state.modalOpen}
           onRequestClose={this.closeModal}>
           {form}

@@ -1,11 +1,10 @@
 import React from 'react';
-import SplashPageNavContainer from './splash_page_nav_container';
+import SplashPageNavContainer from '../nav_bars/splash_page_nav_container';
 
 const SplashPage = () => (
   <div className="splash">
-    <SplashPageNavContainer />
     <main>
-      <div>Solve puzzles together</div>
+      <div><h2>Solve puzzles together</h2></div>
     </main>
     <footer>Happy Hunting!</footer>
   </div>

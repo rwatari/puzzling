@@ -3,19 +3,23 @@ html {
   height: 100%;
 }
 
-main#root, main#root > div {
+main#root, main#root > div, body {
   height: 100%;
-}
-
-body {
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 
 h1 {
   font-size: 40px;
   font-weight: bold;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 25px;
 }
 
 input {
@@ -34,4 +38,23 @@ button, input[type="submit"] {
 
 button:active, input[type="submit"]:active {
   box-shadow: none;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: bold;
+  align-items: center;
+  border-bottom: 3px solid black;
+  position: relative;
+  height: 90px;
+}
+
+nav > div {
+  margin: 5px;
+}
+
+.logo {
+  text-align: center;
 }

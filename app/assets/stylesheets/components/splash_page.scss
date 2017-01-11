@@ -1,42 +1,21 @@
 .splash {
-  height: 100%;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
 
-.splash nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  font-weight: bold;
-  align-items: center;
-  border-bottom: 3px solid black;
-  position: relative;
-}
-
-.splash nav div {
-  margin: 5px;
-}
-
 .splash-nav-session {
   display: flex;
   flex-direction: row;
-}
-
-.splash-nav-session {
   margin-right: 20px;
 }
 
 .splash-nav-session li {
-  margin: 15px;
+  margin: auto 12px;
 }
 
 .splash-nav-session li button {
   padding: 8px;
-}
-
-.logo {
-  text-align: center;
 }
 
 .splash main {

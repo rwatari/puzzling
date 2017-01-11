@@ -12,6 +12,8 @@ section, img, div, h2, p, form, label, input, textarea, footer {
   vertical-align: inherit;
   box-sizing: inherit;
   background: transparent;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
 }
 
 ol, ul {

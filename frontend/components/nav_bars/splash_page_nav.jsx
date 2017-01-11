@@ -40,7 +40,7 @@ class SplashPageNav extends React.Component {
     );
 
     return (
-      <nav>
+      <nav className="splash-nav">
         <div className="logo">
           <h1>Puzzling</h1>
         </div>

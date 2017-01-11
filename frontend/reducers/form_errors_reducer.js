@@ -9,9 +9,9 @@ const FormErrorsReducer = (state = _defaultState, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_SESSION_ERRORS:
-      return merge({}, state, {session: action.errors});
+      return merge({}, _defaultState, {session: action.errors});
     default:
-      return _defaultState;
+      return state;
   }
 };
 

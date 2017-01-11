@@ -63,6 +63,7 @@
   border: 1px solid lightgrey;
   color: black;
   padding: 20px;
+  width: 200px;
 }
 
 .session-form form label {

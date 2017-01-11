@@ -36,7 +36,6 @@ class SessionForm extends React.Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        {errorList}
         <label>
           Username:
           <br />
@@ -55,6 +54,7 @@ class SessionForm extends React.Component {
             onChange={this.handleUpdate("password")}/>
         </label>
         <br />
+        {errorList}
         <input type="submit" value="Submit"/>
       </form>
     );

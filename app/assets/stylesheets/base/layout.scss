@@ -1,4 +1,17 @@
 // Application-wide styling
+html {
+  height: 100%;
+}
+
+main#root, main#root > div {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 
 h1 {
   font-size: 40px;

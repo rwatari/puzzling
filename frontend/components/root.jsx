@@ -3,6 +3,7 @@ import {Provider} from 'react-redux';
 import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 import App from './app';
 import SplashPage from './splash_page/splash_page';
+import UserHomeContainer from './user_home/user_home_container';
 
 const Root = ({store}) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
@@ -22,14 +23,12 @@ const Root = ({store}) => {
       <Router history={hashHistory}>
         <Route path="/" component={App}>
           <IndexRoute component={SplashPage}/>
-          <Route path="/home" component={Home} onEnter={_redirectUnlessLoggedIn}/>
+          <Route path="/home" component={UserHomeContainer} onEnter={_redirectUnlessLoggedIn}/>
         </Route>
       </Router>
     </Provider>
   );
 };
-
-const Home = () => <h3>Home!</h3>;
 
 
 export default Root;

@@ -11,7 +11,7 @@ const FormErrorsReducer = (state = _defaultState, action) => {
     case RECEIVE_SESSION_ERRORS:
       return merge({}, state, {session: action.errors});
     default:
-      return state;
+      return _defaultState;
   }
 };
 

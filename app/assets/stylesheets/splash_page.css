@@ -1,0 +1,70 @@
+.splash nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: darkblue;
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+  align-items: center;
+}
+
+.splash nav div {
+  margin: 5px;
+}
+
+.splash-nav-session {
+  display: flex;
+  flex-direction: row;
+}
+
+.splash-nav-session {
+  margin-right: 20px;
+}
+
+.splash-nav-session li {
+  margin: 15px;
+}
+
+.splash-nav-session li button {
+  background-color: #03A9F4;
+  color: white;
+  font-family: sans-serif;
+  padding: 8px;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0px 3px 0px 0px #192670;
+}
+
+.logo {
+  text-align: center;
+}
+
+.splash main {
+  height: 500px;
+  width: 100%;
+  border-bottom: 1px solid lightgrey;
+}
+
+/*.splash footer {
+  justify-content: center;
+  background: darkblue;
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+  align-items: center;
+}*/
+
+.session-form {
+  position: absolute;
+  top: 70px;
+  right: 50px;
+  background-color: white;
+  border: 1px solid lightgrey;
+  color: black;
+  padding: 20px;
+}
+
+.session-form form label {
+  margin: 5px;
+}

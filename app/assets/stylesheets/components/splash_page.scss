@@ -5,6 +5,7 @@
   font-weight: bold;
   align-items: center;
   border-bottom: 3px solid black;
+  position: relative;
 }
 
 .splash nav div {
@@ -49,10 +50,11 @@
 
 .session-form {
   position: absolute;
-  top: 70px;
-  right: 50px;
+  top: 75px;
+  right: 165px;
   background-color: white;
-  border: 1px solid lightgrey;
+  border: 2px solid black;
+  border-radius: 5px;
   color: black;
   padding: 20px;
   width: 200px;

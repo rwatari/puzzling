@@ -1,18 +1,21 @@
 import React from 'react';
 import SessionFormContainer from '../session_form/session_form_container';
 import {withRouter} from 'react-router';
+import Modal from 'react-modal';
 
 class SplashPageNav extends React.Component {
   constructor() {
     super();
-    this.state = {formType: ""};
+    this.state = {formType: "login", modalOpen: false};
     this.handleClick = this.handleClick.bind(this);
     this.handleGuestDemo = this.handleGuestDemo.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   handleClick(e) {
     e.preventDefault();
     this.setState({formType: e.target.value});
+    this.openModal();
   }
 
   handleGuestDemo() {
@@ -21,15 +24,21 @@ class SplashPageNav extends React.Component {
     );
   }
 
+  openModal() {
+    this.setState({modalOpen: true});
+  }
+
+  closeModal() {
+    this.setState({modalOpen: false});
+  }
+
   render() {
-    let form;
-    if (this.state.formType) {
-      form = (
-        <div className="session-form">
-          <SessionFormContainer formType={this.state.formType}/>
-        </div>
-      );
-    }
+    const form = (
+      <div className="session-form">
+        <SessionFormContainer formType={this.state.formType}/>
+      </div>
+    );
+
     return (
       <nav>
         <div className="logo">
@@ -50,7 +59,12 @@ class SplashPageNav extends React.Component {
             </li>
           </ul>
         </div>
-        {form}
+        <Modal
+          className="session-form-modal"
+          isOpen={this.state.modalOpen}
+          onRequestClose={this.closeModal}>
+          {form}
+        </Modal>
       </nav>
     );
   }

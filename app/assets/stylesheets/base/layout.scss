@@ -1,0 +1,20 @@
+// Application-wide styling
+
+h1 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+input {
+  border: 2px solid black;
+}
+
+button, input[type="submit"] {
+  color: black;
+  padding: 5px;
+  margin: 5px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 2px solid black;
+  box-shadow: 0px 3px 0px 0px #192670;
+}

@@ -34,20 +34,18 @@ class SessionForm extends React.Component {
       ))}
     </ul>);
 
+    const buttonText = (formType === "login") ? "Log in!" : "Sign up!";
+
     return (
       <form onSubmit={this.handleSubmit}>
-        <label>
-          Username:
-          <br />
+        <label>Username:<br />
           <input
             type="text"
             value={username}
             onChange={this.handleUpdate("username")}/>
         </label>
         <br />
-        <label>
-          Password:
-          <br />
+        <label>Password:<br />
           <input
             type="password"
             value={password}
@@ -55,7 +53,7 @@ class SessionForm extends React.Component {
         </label>
         <br />
         {errorList}
-        <input type="submit" value="Submit"/>
+        <input type="submit" value={buttonText}/>
       </form>
     );
   }

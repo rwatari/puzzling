@@ -25,7 +25,7 @@ class SplashPageNav extends React.Component {
     return (
       <nav>
         <div className="logo">
-          Logo and "Puzzling" goes here
+          <h1>Puzzling</h1>
         </div>
         <div>
           <ul className="splash-nav-session">

@@ -1,9 +1,9 @@
 import React from 'react';
-import SplashPageNav from './splash_page_nav';
+import SplashPageNavContainer from './splash_page_nav_container';
 
 const SplashPage = () => (
   <div className="splash">
-    <SplashPageNav />
+    <SplashPageNavContainer />
     <main>Splash image will go here</main>
     <footer>Footer Stuff</footer>
   </div>

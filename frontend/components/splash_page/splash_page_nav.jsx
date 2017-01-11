@@ -1,16 +1,24 @@
 import React from 'react';
 import SessionFormContainer from '../session_form/session_form_container';
+import {withRouter} from 'react-router';
 
 class SplashPageNav extends React.Component {
   constructor() {
     super();
     this.state = {formType: ""};
     this.handleClick = this.handleClick.bind(this);
+    this.handleGuestDemo = this.handleGuestDemo.bind(this);
   }
 
   handleClick(e) {
     e.preventDefault();
     this.setState({formType: e.target.value});
+  }
+
+  handleGuestDemo() {
+    this.props.loginAsGuest().then(
+      () => this.props.router.push("/home")
+    );
   }
 
   render() {
@@ -37,6 +45,9 @@ class SplashPageNav extends React.Component {
               <button onClick={this.handleClick}
                 value="login">Log In</button>
             </li>
+            <li>
+              <button onClick={this.handleGuestDemo}>Guest Demo</button>
+            </li>
           </ul>
         </div>
         {form}
@@ -45,4 +56,4 @@ class SplashPageNav extends React.Component {
   }
 }
 
-export default SplashPageNav;
+export default withRouter(SplashPageNav);

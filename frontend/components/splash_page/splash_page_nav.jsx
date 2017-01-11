@@ -4,7 +4,7 @@ import SessionFormContainer from '../session_form/session_form_container';
 class SplashPageNav extends React.Component {
   constructor() {
     super();
-    this.state = {formType: "login"};
+    this.state = {formType: ""};
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -14,6 +14,14 @@ class SplashPageNav extends React.Component {
   }
 
   render() {
+    let form;
+    if (this.state.formType) {
+      form = (
+        <div className="session-form">
+          <SessionFormContainer formType={this.state.formType}/>
+        </div>
+      );
+    }
     return (
       <nav>
         <div className="logo">
@@ -31,9 +39,7 @@ class SplashPageNav extends React.Component {
             </li>
           </ul>
         </div>
-        <div className="session-form">
-          <SessionFormContainer formType={this.state.formType}/>
-        </div>
+        {form}
       </nav>
     );
   }

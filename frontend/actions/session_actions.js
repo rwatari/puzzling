@@ -2,6 +2,7 @@ import * as SessionUtil from '../util/session_api_util';
 import {receiveSessionErrors} from './form_error_actions';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
+export const LOGOUT_USER = 'LOGOUT_USER';
 
 // thunks
 
@@ -14,7 +15,7 @@ export const login = user => dispatch => {
 
 export const logout = () => dispatch => {
   return SessionUtil.logout().then(
-    () => dispatch(receiveCurrentUser(null))
+    () => dispatch(logoutUser())
   );
 };
 
@@ -31,3 +32,5 @@ export const receiveCurrentUser = currentUser => ({
   type: RECEIVE_CURRENT_USER,
   currentUser
 });
+
+export const logoutUser = () => ({type: LOGOUT_USER});

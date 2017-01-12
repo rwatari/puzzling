@@ -8,8 +8,8 @@
 #
 
 class Membership < ApplicationRecord
-  belongs_to :user
-  belongs_to :team
+  belongs_to :user, inverse_of: :memberships
+  belongs_to :team, inverse_of: :memberships
 
   validates :user, :team, presence: true
   validates :user, uniqueness: { scope: :team }

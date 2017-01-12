@@ -14,7 +14,8 @@ class User < ApplicationRecord
   attr_reader :password
 
   has_many :memberships,
-    dependent: :destroy
+    dependent: :destroy,
+    inverse_of: :user
 
   has_many :joined_teams,
     through: :memberships,

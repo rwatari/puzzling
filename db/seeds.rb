@@ -5,13 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+Team.destroy_all
+Membership.destroy_all
+
 guest = User.create(username: "guest", password: 'helloworld')
 
-User.create([
-  { username: 'user1', password: SecureRandom.base64 },
-  { username: 'user2', password: SecureRandom.base64 },
-  { username: 'user3', password: SecureRandom.base64 }
-])
+user1 = User.create(username: 'user1', password: SecureRandom.base64)
+user2 = User.create(username: 'user2', password: SecureRandom.base64)
+user3 = User.create(username: 'user3', password: SecureRandom.base64)
 
 team1 = Team.new(
    name: 'Panic Mages - MH2015', hunt_name: 'Mystery Hunt 2015'
@@ -27,9 +29,9 @@ team1.save!
 team2.save!
 
 Membership.create([
-  { user_id: 1, team_id: 1 },
-  { user_id: 1, team_id: 2 },
-  { user_id: 2, team_id: 1 },
-  { user_id: 3, team_id: 1 },
-  { user_id: 4, team_id: 2 }
+  { user_id: guest.id, team_id: team1.id },
+  { user_id: guest.id, team_id: team2.id },
+  { user_id: user1.id, team_id: team1.id },
+  { user_id: user2.id, team_id: team1.id },
+  { user_id: user3.id, team_id: team2.id }
 ])

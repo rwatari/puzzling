@@ -1,8 +1,5 @@
 import * as SessionUtil from '../util/session_api_util';
-import {
-  RECEIVE_SESSION_ERRORS,
-  receiveSessionErrors
-} from './form_error_actions';
+import {receiveSessionErrors} from './form_error_actions';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 

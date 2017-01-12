@@ -12,7 +12,8 @@
 
 class Team < ApplicationRecord
   has_many :memberships,
-    dependent: :destroy
+    dependent: :destroy,
+    inverse_of: :team
 
   has_many :members,
     through: :memberships,

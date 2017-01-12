@@ -15,13 +15,20 @@
     1: {
       id: 1,
       name: "Puzzle Maniacs",
-      hunt: "CPC"
+      hunt: "CPC",
+      members: [
+        {username: 'app-academy', id: 1},
+        {username: 'billy', id: 5},
+        {username: 'catsanddogs', id: 16},
+      ]
     },
     53: {
       id: 53,
       name: "Puzzle Maniacs",
-      hunt: "MMH"
-      }
+      hunt: "MMH",
+      members: [
+        {username: 'app-academy', id: 1}
+      ]
     }
   },
   messages: {

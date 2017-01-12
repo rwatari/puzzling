@@ -14,18 +14,12 @@ class Api::TeamsController < ApplicationController
   def create
     @team = Team.new(team_params)
     @team.admin = current_user
+    @team.members = [current_user]
     if @team.save
       render :show
     else
       render json: @team.errors.full_messages, status: 422
     end
-  end
-
-  def update
-    @team = Team.find_by_id(params[:id])
-  end
-
-  def destroy
   end
 
   private

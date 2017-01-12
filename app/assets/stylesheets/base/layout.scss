@@ -20,6 +20,11 @@ h2 {
 
 h3 {
   font-size: 25px;
+  margin: 15px;
+}
+
+h4 {
+  font-size: 20px;
 }
 
 input {
@@ -79,19 +84,4 @@ div.main-content > div {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.card-container {
-  width: 100%;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-}
-
-.item-card {
-  width: 200px;
-  height: 150px;
-  border: 1px solid darkgrey;
-  border-radius: 10px;
-  margin: 10px 20px;
 }

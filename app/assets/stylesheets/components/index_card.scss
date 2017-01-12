@@ -1,0 +1,39 @@
+.card-container {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.item-card {
+  width: 230px;
+  height: 160px;
+  border: 1px solid darkgrey;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.add-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-form {
+  margin: 10px;
+}
+
+.card-form input[type="text"] {
+  width: 87%;
+  margin: 5px 10px;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.card-form input[type="submit"], .card-form button {
+  border-width: 1px;
+  font-weight: normal;
+  font-size: 15px;
+  padding: 0 7px;
+  box-shadow: 0px 1px 0px 0px;
+}

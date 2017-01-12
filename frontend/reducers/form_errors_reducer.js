@@ -5,7 +5,8 @@ import {
 import merge from 'lodash/merge';
 
 const _defaultState = {
-  session:[]
+  session:[],
+  team: [],
 };
 
 const FormErrorsReducer = (state = _defaultState, action) => {
@@ -16,7 +17,7 @@ const FormErrorsReducer = (state = _defaultState, action) => {
     case RECEIVE_TEAM_ERRORS:
       return merge({}, _defaultState, {team: action.errors});
     default:
-      return state;
+      return _defaultState;
   }
 };
 

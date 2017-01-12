@@ -16,6 +16,7 @@
       id: 1,
       name: "Puzzle Maniacs",
       hunt: "CPC",
+      admin: {username: 'billy', id: 5},
       members: [
         {username: 'app-academy', id: 1},
         {username: 'billy', id: 5},
@@ -26,6 +27,7 @@
       id: 53,
       name: "Puzzle Maniacs",
       hunt: "MMH",
+      admin: {username: 'app-academy', id: 1},
       members: [
         {username: 'app-academy', id: 1}
       ]

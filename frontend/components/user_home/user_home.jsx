@@ -1,4 +1,5 @@
 import React from 'react';
+import TeamIndexContainer from './team_index_container';
 
 class UserHome extends React.Component {
   render() {
@@ -6,7 +7,7 @@ class UserHome extends React.Component {
       <div className="main-content">
         <div className="user-teams">
           <h3>Teams</h3>
-          <ul className="team-list"></ul>
+          <TeamIndexContainer />
         </div>
       </div>
     );

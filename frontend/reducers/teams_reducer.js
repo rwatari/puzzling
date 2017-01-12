@@ -12,8 +12,6 @@ const TeamsReducer = (state = {}, action) => {
       return action.teams;
     case RECEIVE_TEAM:
       return merge({}, state, {[action.team.id]: action.team});
-    case LOGOUT_USER:
-      return {};
     default:
       return state;
   }

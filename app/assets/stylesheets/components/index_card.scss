@@ -19,21 +19,29 @@
   justify-content: center;
 }
 
-.card-form {
+.form-card {
+  height: 100%;
+}
+
+.form-card form {
   margin: 10px;
 }
 
-.card-form input[type="text"] {
+.form-card input[type="text"] {
   width: 87%;
   margin: 5px 10px;
   border: 1px solid black;
   border-radius: 3px;
 }
 
-.card-form input[type="submit"], .card-form button {
+.form-card input[type="submit"], .form-card button {
   border-width: 1px;
   font-weight: normal;
   font-size: 15px;
   padding: 0 7px;
   box-shadow: 0px 1px 0px 0px;
+}
+
+.card-form-errors {
+  font-size: 15px;
 }

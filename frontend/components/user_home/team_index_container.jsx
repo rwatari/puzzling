@@ -8,7 +8,8 @@ import {
 
 const mapStateToProps = state => ({
   teams: state.teams,
-  currentUser: state.session
+  currentUser: state.session,
+  errors: state.formErrors.team
 });
 
 const mapDispatchToProps = dispatch => ({

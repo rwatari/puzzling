@@ -11,12 +11,13 @@
   justify-content: center;
 }
 
-.item-card {
+.item-card, .form-card {
   width: 230px;
   height: 160px;
   border: 1px solid darkgrey;
   border-radius: 10px;
   margin: 10px;
+  box-shadow: 0px 1px 0px 0px;
 }
 
 .item-card:hover {
@@ -29,10 +30,24 @@
   display: block;
 }
 
+.item-card h4, .item-card h5 {
+  word-wrap: break-word;
+  width: 80%;
+  margin: 10px;
+}
+
+.item-card h5 {
+  font-family: $raleway;
+}
+
 .add-card {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.add-card h4 {
+  text-align: center;
 }
 
 .form-card {
@@ -55,7 +70,12 @@
   font-weight: normal;
   font-size: 15px;
   padding: 0 7px;
+  margin: 6px;
   box-shadow: 0px 1px 0px 0px;
+}
+
+.form-card h5 {
+  margin: 2px;
 }
 
 .card-form-errors {

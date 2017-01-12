@@ -21,14 +21,14 @@ class TeamForm extends React.Component {
   }
 
   resetForm() {
-    this.setState({name: '', hunt: ''});
+    this.setState({name: '', hunt_name: ''});
     this.props.hideForm();
   }
 
   render() {
     return (
       <li key="form"
-        className="item-card form-card">
+        className="form-card">
         <form onSubmit={this.handleSubmit}>
           <label>
             <h5>Team name:</h5>

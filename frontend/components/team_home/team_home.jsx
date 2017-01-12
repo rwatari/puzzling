@@ -16,11 +16,20 @@ class TeamHome extends React.Component {
   }
 
   render() {
-    return isEmpty(this.props.team) ? <div></div> :
+    const {team} = this.props;
+    return isEmpty(team) ? <div></div> :
     (
       <div className="main-content">
         <div className="card-group">
-          <h3>{this.props.team.name}</h3>
+          <h3>{team.name}</h3>
+        </div>
+        <div className="team-members">
+          <h3>Team members</h3>
+          <ul>
+            {team.members.map(member => (
+              <li key={member.id}>{member.username}</li>
+            ))}
+          </ul>
         </div>
       </div>
     );

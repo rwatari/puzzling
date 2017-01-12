@@ -1,3 +1,9 @@
+.card-group > h3 {
+  width: 70%;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+
 .card-container {
   width: 100%;
   display: flex;
@@ -11,6 +17,10 @@
   border: 1px solid darkgrey;
   border-radius: 10px;
   margin: 10px;
+}
+
+.item-card:hover {
+  cursor: pointer;
 }
 
 .add-card {

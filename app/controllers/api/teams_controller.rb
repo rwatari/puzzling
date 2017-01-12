@@ -8,7 +8,16 @@ class Api::TeamsController < ApplicationController
   end
 
   def show
-    @team = Team.includes(:members, :admin).find_by_id(params[:id])
+    @team = current_user
+      .joined_teams
+      .includes(:members, :admin)
+      .where(id: params[:id])
+      .first
+    if @team
+      render :show
+    else
+      render json: ["Current user is not a member of this team"], status: 403
+    end
   end
 
   def create

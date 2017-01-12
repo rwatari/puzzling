@@ -12,9 +12,7 @@ class TeamIndex extends React.Component {
   }
 
   componentDidMount() {
-    if (isEmpty(this.props.teams)) {
-      this.props.requestTeams();
-    }
+    this.props.requestTeams();
   }
 
   showForm() {

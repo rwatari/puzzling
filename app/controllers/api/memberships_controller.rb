@@ -1,10 +1,11 @@
 class Api::MembershipsController < ApplicationController
   def create
-    @membership = Membership.new(membership_params)
-    if @membership.save
-      render json: {}, status: 200
+    membership = Membership.new(membership_params)
+    if membership.save
+      @team = membership.team
+      render 'api/teams/show'
     else
-      render json: @membership.errors.full_messages, status: 422
+      render json: membership.errors.full_messages, status: 422
     end
   end
 

@@ -1,1 +1,1 @@
-json.partial! 'team', team: @team
+json.partial! 'api/teams/team', team: @team

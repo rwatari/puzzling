@@ -1,36 +1,74 @@
 import React from 'react';
+import Select from 'react-select';
+import {queryUsers} from '../../util/team_api_util';
 
 class SearchBar extends React.Component {
   constructor() {
     super();
-    this.state = {username: ''};
+    this.state = {username: '', user_id: null};
+    this.handleInputChange = this.handleInputChange.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.getOptions = this.getOptions.bind(this);
   }
 
-  handleChange(e) {
-    this.setState({username: e.target.value},
-      () => this.props.searchUsers(this.state.username)
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.createMembership({
+      user_id: this.state.user_id,
+      team_id: this.props.team.id
+    }).then(
+      () => this.setState({username: '', user_id: null})
     );
+  }
+
+  handleChange(val) {
+    this.setState({username: val.label, user_id: val.value});
+  }
+
+  handleInputChange(val) {
+    this.setState({username: val});
+  }
+
+  getOptions(input) {
+    return queryUsers({
+      string: input,
+      team_id: this.props.team.id
+    }).then(response => {
+      const options =  response.map(user => (
+        {value: user.id, label: user.username}
+      ));
+      return {options};
+    });
   }
 
   render() {
     return (
-      <form className="user-search">
-        <input
-          type="text"
-          value={this.state.username}
-          onChange={this.handleChange}
-          placeholder="Find other users..."
+      <div>
+        <form className="user-search"
+          onSubmit={this.handleSubmit}>
+          <Select.Async
+            name="user-search-select"
+            value={this.state.user_id}
+            loadOptions={this.getOptions}
+            onInputChange={this.handleInputChange}
+            onChange={this.handleChange}
+            clearable={false}
+            autoload={false}
+            placeholder="Search for users..."
           />
-        <input type="submit" value="Add" />
-        <ul>
-          {this.props.userSearchResults.map(user => (
-            <li key={user.id}>{user.username}</li>
-          ))}
-        </ul>
-      </form>
+          <input type="submit" value="Add!"/>
+        </form>
+      </div>
     );
   }
 }
 
 export default SearchBar;
+
+// options={this.props.userSearchResults.map(result => (
+//   {
+//     value: result.id,
+//     label: result.username
+//   }
+// ))}

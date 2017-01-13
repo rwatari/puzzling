@@ -25,7 +25,7 @@ class TeamHome extends React.Component {
           <h3>{team.name}</h3>
           <label className="team-invite">
             <h4>Invite people to the team</h4>
-            <SearchBarContainer />
+            <SearchBarContainer team={team}/>
           </label>
         </div>
         <div className="team-members">

@@ -8,7 +8,9 @@ class SearchBar extends React.Component {
   }
 
   handleChange(e) {
-    this.setState({username: e.target.value});
+    this.setState({username: e.target.value},
+      () => this.props.searchUsers(this.state.username)
+    );
   }
 
   render() {
@@ -21,6 +23,11 @@ class SearchBar extends React.Component {
           placeholder="Find other users..."
           />
         <input type="submit" value="Add" />
+        <ul>
+          {this.props.userSearchResults.map(user => (
+            <li key={user.id}>{user.username}</li>
+          ))}
+        </ul>
       </form>
     );
   }

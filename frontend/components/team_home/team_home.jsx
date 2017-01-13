@@ -1,7 +1,7 @@
 import React from 'react';
 import {withRouter} from 'react-router';
 import {isEmpty} from 'lodash';
-import SearchBar from './search_bar';
+import SearchBarContainer from './search_bar_container';
 
 class TeamHome extends React.Component {
   componentDidMount() {
@@ -25,7 +25,7 @@ class TeamHome extends React.Component {
           <h3>{team.name}</h3>
           <label className="team-invite">
             <h4>Invite people to the team</h4>
-            <SearchBar />
+            <SearchBarContainer />
           </label>
         </div>
         <div className="team-members">

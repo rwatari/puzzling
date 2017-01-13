@@ -20,6 +20,14 @@ export const createTeam = team => (
   })
 );
 
+export const queryUsers = query => (
+  $.ajax({
+    method: 'GET',
+    url: 'api/users/search',
+    data: {query}
+  })
+);
+
 export const createMembership = membership => (
   $.ajax({
     method: 'POST',

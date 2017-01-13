@@ -1,0 +1,30 @@
+.team-invite h4 {
+  text-align: center;
+}
+
+form.user-search {
+  width: 100%;
+  display: flex;
+  flex-direction: row
+}
+
+.user-search input {
+  margin: 10px 0;
+  border: 1px solid black;
+}
+
+.user-search input[type="text"] {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  flex-grow: 1;
+  border-right: none;
+  padding-left:10px;
+}
+
+.user-search input[type="submit"] {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  box-shadow: none;
+}

@@ -15,7 +15,15 @@ export const fetchTeam = id => (
 export const createTeam = team => (
   $.ajax({
     method: 'POST',
-    url: `api/teams`,
+    url: 'api/teams',
     data: {team}
+  })
+);
+
+export const createMembership = membership => (
+  $.ajax({
+    method: 'POST',
+    url: 'api/memberships',
+    data: {membership}
   })
 );

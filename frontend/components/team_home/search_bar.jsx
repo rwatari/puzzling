@@ -34,12 +34,9 @@ class SearchBar extends React.Component {
     return queryUsers({
       string: input,
       team_id: this.props.team.id
-    }).then(response => {
-      const options =  response.map(user => (
-        {value: user.id, label: user.username}
-      ));
-      return {options};
-    });
+    }).then(options => (
+      (options.length > 0) ? {options} : null
+    ));
   }
 
   render() {
@@ -55,6 +52,8 @@ class SearchBar extends React.Component {
             onChange={this.handleChange}
             clearable={false}
             autoload={false}
+            valueKey="id"
+            labelKey="username"
             placeholder="Search for users..."
           />
           <input type="submit" value="Add!"/>

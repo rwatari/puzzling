@@ -52,8 +52,11 @@ nav {
   font-weight: bold;
   align-items: center;
   border-bottom: 3px solid black;
-  position: relative;
+  position: fixed;
   height: 90px;
+  flex-shrink: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 nav > div {
@@ -71,7 +74,7 @@ div.main-content {
   align-self: center;
   border: 1px solid lightgrey;
   border-radius: 10px;
-  margin-top: 50px;
+  margin-top: 150px;
   margin-bottom: 50px;
 }
 

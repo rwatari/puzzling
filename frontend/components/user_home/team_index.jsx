@@ -53,7 +53,7 @@ class TeamIndex extends React.Component {
     return (
       <ul className="card-container">
         {formItem}
-        {teamItems}
+        {teamItems.reverse()}
       </ul>
     );
   }

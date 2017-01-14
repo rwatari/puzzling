@@ -27,16 +27,25 @@
 .item-card a {
   height: 100%;
   width: 100%;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.item-card h4, .item-card h5 {
+.item-card-headers {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 15px;
+}
+
+.item-card-headers h4, .item-card-headers h5 {
   word-wrap: break-word;
   width: 80%;
-  margin: 10px;
 }
 
-.item-card h5 {
+.item-card > h5 {
   font-family: $raleway;
 }
 
@@ -46,7 +55,7 @@
   justify-content: center;
 }
 
-.add-card h4 {
+.add-card > h4 {
   text-align: center;
 }
 
@@ -80,4 +89,28 @@
 
 .card-form-errors {
   font-size: 15px;
+}
+
+div.user-icon-small {
+  height: 30px;
+    width: 30px;
+    background: darkgrey;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 30px;
+    border-radius: 15px;
+    margin: 5px;
+}
+
+.user-icon-small > h4 {
+  font-family: $raleway;
+  font-weight: bold;
+}
+
+.members-icons {
+  display: flex;
+  margin-bottom: 5px;
+  margin-left: 5px;
 }

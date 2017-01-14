@@ -5,8 +5,7 @@ import {queryUsers} from '../../util/team_api_util';
 class SearchBar extends React.Component {
   constructor() {
     super();
-    this.state = {username: '', user_id: null};
-    this.handleInputChange = this.handleInputChange.bind(this);
+    this.state = {username: '', userId: null};
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.getOptions = this.getOptions.bind(this);
@@ -15,19 +14,15 @@ class SearchBar extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createMembership({
-      user_id: this.state.user_id,
+      user_id: this.state.userId,
       team_id: this.props.team.id
     }).then(
-      () => this.setState({username: '', user_id: null})
+      () => this.setState({username: '', userId: null})
     );
   }
 
   handleChange(val) {
-    this.setState({username: val.label, user_id: val.value});
-  }
-
-  handleInputChange(val) {
-    this.setState({username: val});
+    this.setState({username: val.username, userId: val.id});
   }
 
   getOptions(input) {
@@ -46,9 +41,8 @@ class SearchBar extends React.Component {
           onSubmit={this.handleSubmit}>
           <Select.Async
             name="user-search-select"
-            value={this.state.user_id}
+            value={this.state.userId}
             loadOptions={this.getOptions}
-            onInputChange={this.handleInputChange}
             onChange={this.handleChange}
             clearable={false}
             autoload={false}
@@ -64,10 +58,3 @@ class SearchBar extends React.Component {
 }
 
 export default SearchBar;
-
-// options={this.props.userSearchResults.map(result => (
-//   {
-//     value: result.id,
-//     label: result.username
-//   }
-// ))}

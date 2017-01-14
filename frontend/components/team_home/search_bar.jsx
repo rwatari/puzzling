@@ -45,7 +45,8 @@ class SearchBar extends React.Component {
             loadOptions={this.getOptions}
             onChange={this.handleChange}
             clearable={false}
-            autoload={false}
+            autosize={false}
+            onBlurResetsInput={false}
             valueKey="id"
             labelKey="username"
             placeholder="Search for users..."

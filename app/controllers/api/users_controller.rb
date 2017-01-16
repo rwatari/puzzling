@@ -10,15 +10,14 @@ class Api::UsersController < ApplicationController
   end
 
   def search
+    team_membership_ids = Membership
+      .where(team_id: params[:query][:team_id])
+      .pluck(:user_id)
+    users = User.where.not(id: team_membership_ids)
     if params[:query][:string].present?
-      team_membership_ids = Membership
-        .where(team_id: params[:query][:team_id])
-        .pluck(:user_id)
-      @users = User
-        .where.not(id: team_membership_ids)
-        .where("username ~ ?", params[:query][:string])
+      @users = users.where("username ~ ?", params[:query][:string])
     else
-      @users = User.none
+      @users = users.limit(10)
     end
   end
 end

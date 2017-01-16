@@ -2,8 +2,7 @@ class Api::PuzzlesController < ApplicationController
   before_action :require_signed_in
 
   def index
-    debugger
-    case params[:query][:index_by]
+    case params[:query][:filter_by]
     when "user"
       puzzles = current_user.puzzles
     when "team"

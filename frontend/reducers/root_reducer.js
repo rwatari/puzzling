@@ -3,11 +3,13 @@ import {LOGOUT_USER} from '../actions/session_actions';
 import SessionReducer from './session_reducer';
 import FormErrorsReducer from './form_errors_reducer';
 import TeamsReducer from './teams_reducer';
+import PuzzlesReducer from './puzzles_reducer';
 
 const _appReducer = combineReducers({
   session: SessionReducer,
   formErrors: FormErrorsReducer,
-  teams: TeamsReducer
+  teams: TeamsReducer,
+  puzzles: PuzzlesReducer
 });
 
 const RootReducer = (state, action) => {

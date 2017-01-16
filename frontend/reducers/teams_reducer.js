@@ -2,7 +2,6 @@ import {
   RECEIVE_TEAMS,
   RECEIVE_TEAM
 } from '../actions/team_actions';
-import {LOGOUT_USER} from '../actions/session_actions';
 import merge from 'lodash/merge';
 
 const TeamsReducer = (state = {}, action) => {

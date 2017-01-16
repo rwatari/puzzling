@@ -11,6 +11,10 @@ user1 = User.create(username: 'user1', password: SecureRandom.base64)
 user2 = User.create(username: 'user2', password: SecureRandom.base64)
 user3 = User.create(username: 'user3', password: SecureRandom.base64)
 
+10.times do |i|
+  User.create(username: "testing#{i}", password: SecureRandom.base64)
+end
+
 team1 = Team.new(
    name: 'Panic Mages - MH2015', hunt_name: 'Mystery Hunt 2015'
 )

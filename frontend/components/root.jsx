@@ -24,17 +24,24 @@ const Root = ({store}) => {
       <Router history={hashHistory}>
         <Route path="/" component={App}>
           <IndexRoute component={SplashPage}/>
-          <Route path="/home"
+          <Route path="home"
             component={UserHomeContainer}
             onEnter={_redirectUnlessLoggedIn}/>
-          <Route path="/teams/:teamId"
-            component={TeamHomeContainer}
-            onEnter={_redirectUnlessLoggedIn}/>
+          <Route path="teams/:teamId"
+            onEnter={_redirectUnlessLoggedIn}>
+            <IndexRoute component={TeamHomeContainer}/>
+            <Route path="puzzles"
+              component={Puzzles}
+              onEnter={_redirectUnlessLoggedIn}/>
+          </Route>
         </Route>
       </Router>
     </Provider>
   );
 };
 
+const Puzzles = () => (
+  <h1>Puzzles!</h1>
+);
 
 export default Root;

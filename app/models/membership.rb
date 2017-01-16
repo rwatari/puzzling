@@ -3,8 +3,8 @@
 # Table name: memberships
 #
 #  id      :integer          not null, primary key
-#  user_id :string           not null
-#  team_id :string           not null
+#  user_id :integer          not null
+#  team_id :integer          not null
 #
 
 class Membership < ApplicationRecord

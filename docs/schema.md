@@ -36,7 +36,7 @@ solved      | boolean   | not null, default: false
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-user_id     | integer   | not null, foreign key (references users), indexed, unique [team_id]
+user_id     | integer   | not null, foreign key (references users), indexed, unique [puzzle_id]
 puzzle_id   | integer   | not null, foreign key (references puzzles), indexed
 
 ## messages

@@ -23,7 +23,17 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def require_signed_in
+    unless signed_in?
+      render json: ["You are not signed in"], status: 401
+    end
+  end
+
   def user_params
     params.require(:user).permit(:username, :password)
+  end
+
+  def to_boolean(str)
+    str == "true"
   end
 end

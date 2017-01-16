@@ -25,6 +25,14 @@ class User < ApplicationRecord
     class_name: :Team,
     foreign_key: :admin_id
 
+  has_many :solvings,
+    dependent: :destroy,
+    inverse_of: :user
+
+  has_many :puzzles,
+    through: :solvings,
+    source: :puzzle
+
   validates :username, :password_digest, :session_token, presence: true
   validates :username, :session_token, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }

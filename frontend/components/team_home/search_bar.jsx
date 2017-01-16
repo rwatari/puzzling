@@ -46,6 +46,7 @@ class SearchBar extends React.Component {
             onChange={this.handleChange}
             clearable={false}
             autosize={false}
+            cached={false}
             onBlurResetsInput={false}
             valueKey="id"
             labelKey="username"

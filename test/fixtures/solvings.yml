@@ -1,11 +1,10 @@
 # == Schema Information
 #
-# Table name: teams
+# Table name: solvings
 #
 #  id         :integer          not null, primary key
-#  name       :string           not null
-#  hunt_name  :string           not null
-#  admin_id   :integer          not null
+#  user_id    :integer          not null
+#  puzzle_id  :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
@@ -13,11 +12,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  hunt_name: MyString
-  admin_id: 1
+  user_id: 1
+  puzzle_id: 1
 
 two:
-  name: MyString
-  hunt_name: MyString
-  admin_id: 1
+  user_id: 1
+  puzzle_id: 1

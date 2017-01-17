@@ -1,5 +1,5 @@
 import React from 'react';
-import {withRouter} from 'react-router';
+import {withRouter, Link} from 'react-router';
 import {isEmpty} from 'lodash';
 import SearchBarContainer from './search_bar_container';
 
@@ -29,19 +29,19 @@ class TeamHome extends React.Component {
           </label>
           <ul className="card-container">
             <li className="item-card">
-              <h4>
-                Message Board
-              </h4>
+              <Link to={`/teams/${team.id}/messages`}>
+                <h4>Message Board</h4>
+              </Link>
             </li>
             <li className="item-card">
-              <h4>
-                Puzzles
-              </h4>
+              <Link to={`/teams/${team.id}/puzzles`}>
+                <h4>Puzzles</h4>
+              </Link>
             </li>
             <li className="item-card">
-              <h4>
-                Schedule
-              </h4>
+              <Link to={`/teams/${team.id}/schedule`}>
+                <h4>Schedule</h4>
+              </Link>
             </li>
           </ul>
         </div>

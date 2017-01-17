@@ -34,6 +34,6 @@ class ApplicationController < ActionController::Base
   end
 
   def to_boolean(str)
-    str == ""
+    str == "true"
   end
 end

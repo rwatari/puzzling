@@ -1,17 +1,29 @@
 import React from 'react';
-import TeamHomeContainer from '../team_home/team_home_container';
+import {isEmpty} from 'lodash';
+import TeamNav from './team_nav';
 
-const TeamPage = props => {
-  if (props.children) {
+class TeamPage extends React.Component {
+  componentDidMount() {
+    if (isEmpty(this.props.team)) {
+      this.props.requestTeam().fail(
+        err => this.redirectToHome()
+      );
+    }
+  }
+
+  redirectToHome () {
+    this.props.router.push('/home');
+  }
+
+  render() {
+    const {team, children} = this.props;
     return (
-      <div>
-        {props.children}
+      <div className="main-content">
+        <TeamNav team={team}/>
+        {children}
       </div>
     );
   }
-  else {
-    return <TeamHomeContainer props={props}/>;
-  }
-};
+}
 
 export default TeamPage;

@@ -5,6 +5,8 @@ import App from './app';
 import SplashPage from './splash_page/splash_page';
 import UserHomeContainer from './user_home/user_home_container';
 import TeamHomeContainer from './team_home/team_home_container';
+import TeamPageContainer from './team_page/team_page_container';
+import PuzzleIndexContainer from './puzzles/puzzle_index_container';
 
 const Root = ({store}) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
@@ -30,18 +32,15 @@ const Root = ({store}) => {
           <Route path="teams/:teamId"
             onEnter={_redirectUnlessLoggedIn}>
             <IndexRoute component={TeamHomeContainer}/>
-            <Route path="puzzles"
-              component={Puzzles}
-              onEnter={_redirectUnlessLoggedIn}/>
+            <Route component={TeamPageContainer}
+              onEnter={_redirectUnlessLoggedIn}>
+              <Route path="puzzles" component={PuzzleIndexContainer}/>
+            </Route>
           </Route>
         </Route>
       </Router>
     </Provider>
   );
 };
-
-const Puzzles = () => (
-  <h1>Puzzles!</h1>
-);
 
 export default Root;

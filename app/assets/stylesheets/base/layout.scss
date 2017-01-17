@@ -45,7 +45,7 @@ button:active, input[type="submit"]:active {
   box-shadow: none;
 }
 
-nav {
+nav.user-nav, nav.splash-nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -59,7 +59,7 @@ nav {
   background-color: rgba(255, 255, 255, 0.7);
 }
 
-nav > div {
+nav.user-nav > div, nav.splash-nav > div {
   margin: 5px;
 }
 

@@ -9,6 +9,6 @@ Rails.application.routes.draw do
     resources :teams, only: [:index, :show, :create]
     resources :memberships, only: [:create]
     resources :puzzles, only: [:index, :show, :create, :update]
-    resources :solvings, only: [:create, :delete]
+    resources :solvings, only: [:create, :destroy]
   end
 end

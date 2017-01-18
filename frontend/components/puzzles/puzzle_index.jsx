@@ -11,17 +11,24 @@ class PuzzleIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestUnsolvedPuzzles();
+    this.props.requestUnsolvedPuzzles(this.props.params.teamId);
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.location.pathname !== this.props.location.pathname) {
+      this.props.requestUnsolvedPuzzles(newProps.params.teamId);
+    }
   }
 
   handleTabClick(property) {
+    const {teamId} = this.props.params;
     return () => {
       if (this.state.activeTab !== property) {
         this.setState({activeTab: property});
         if (property === "unsolved") {
-          this.props.requestUnsolvedPuzzles();
+          this.props.requestUnsolvedPuzzles(teamId);
         } else {
-          this.props.requestSolvedPuzzles();
+          this.props.requestSolvedPuzzles(teamId);
         }
       }
     };

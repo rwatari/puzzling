@@ -51,10 +51,13 @@ class TeamIndex extends React.Component {
     }
 
     return (
-      <ul className="card-container">
-        {formItem}
-        {teamItems.reverse()}
-      </ul>
+      <div className="card-group">
+        <h3>Teams</h3>
+        <ul className="card-container">
+          {formItem}
+          {teamItems.reverse()}
+        </ul>
+      </div>
     );
   }
 }

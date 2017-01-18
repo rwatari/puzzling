@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 import MembersIcons from '../user_home/members_icons';
 
 class PuzzleIndexItem extends React.Component {
@@ -34,20 +35,22 @@ class PuzzleIndexItem extends React.Component {
     }
     return (
       <li className="partial-index-item">
-        <div className="item-info">
-          <div className="item-header">
-            <h4>{puzzle.title}</h4>
-            <h6>{`${puzzle.description.substring(0, 120)}...`}</h6>
+        <Link to={`/teams/${puzzle.team_id}/puzzles/${puzzle.id}`}>
+          <div className="item-info">
+            <div className="item-header">
+              <h4>{puzzle.title}</h4>
+              <h6>{`${puzzle.description.substring(0, 120)}...`}</h6>
+            </div>
+            <MembersIcons members={puzzle.solvers}/>
           </div>
-          <MembersIcons members={puzzle.solvers}/>
-        </div>
-        <div className="item-nav">
-          <ul>
-            <li>
-              {followButton}
-            </li>
-          </ul>
-        </div>
+          <div className="item-nav">
+            <ul>
+              <li>
+                {followButton}
+              </li>
+            </ul>
+          </div>
+        </Link>
       </li>
     );
   }

@@ -10,13 +10,13 @@ const mapStateToProps = state => ({
   currentUser: state.session
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  requestSolvedPuzzles: () => dispatch(requestTeamPuzzles({
-    team_id: ownProps.params.teamId,
+const mapDispatchToProps = dispatch => ({
+  requestSolvedPuzzles: teamId => dispatch(requestTeamPuzzles({
+    team_id: teamId,
     solved: true
   })),
-  requestUnsolvedPuzzles: () => dispatch(requestTeamPuzzles({
-    team_id: ownProps.params.teamId,
+  requestUnsolvedPuzzles: teamId => dispatch(requestTeamPuzzles({
+    team_id: teamId,
     solved: false
   })),
   createSolving: solving => dispatch(createSolving(solving))

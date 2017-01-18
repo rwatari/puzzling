@@ -30,7 +30,6 @@ h4 {
 input, textarea {
   border: 1px solid black;
   border-radius: 5px;
-  padding: 5px;
 }
 
 button, input[type="submit"] {
@@ -96,8 +95,6 @@ div.main-content > div {
   align-items: center;
 }
 
-a:hover {
-  h1, h2, h3, h4 {
-    text-decoration: underline;
-  }
+a:hover > h1, a:hover > h2, a:hover > h3, a:hover > h4  {
+  text-decoration: underline;
 }

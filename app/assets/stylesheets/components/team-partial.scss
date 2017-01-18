@@ -1,7 +1,11 @@
-.team-partial > a {
-  padding: 5px 15px;
-  border: 1px solid black;
-  border-radius: 5px;
+.team-partial {
+  align-items: center;
+
+  & > a {
+    padding: 5px 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
 }
 
 .team-partial-content {
@@ -51,18 +55,6 @@
     button {
       width: 100px;
       text-align: center;
-
-      &.inactive-button {
-        color: grey;
-        border: 1px solid grey;
-
-        &:hover, &:active {
-          color: grey;
-          background-color: white;
-          box-shadow: 0 1px 0 0 darkgrey;
-          cursor: default;
-        }
-      }
     }
   }
 
@@ -78,5 +70,38 @@
     textarea {
       height: 300px;
     }
+  }
+}
+
+.main-content > .detail-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+
+  .detail-header {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+
+    nav {
+      margin-top: 15px;
+
+      button {
+        width: 120px;
+        text-align: center;
+      }
+    }
+  }
+
+  .detail-header-text {
+    & > h3, & > h4 {
+      text-align: left;
+      margin-left: 0;
+    }
+  }
+
+  & > h3 , & > p {
+    width: 70%;
   }
 }

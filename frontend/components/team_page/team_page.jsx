@@ -16,10 +16,10 @@ class TeamPage extends React.Component {
   }
 
   render() {
-    const {team, children} = this.props;
+    const {team, children, location} = this.props;
     return (
       <div className="main-content">
-        <TeamNav team={team}/>
+        <TeamNav team={team} location={location}/>
         {children}
       </div>
     );

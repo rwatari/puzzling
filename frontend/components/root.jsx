@@ -8,6 +8,7 @@ import TeamHomeContainer from './team_home/team_home_container';
 import TeamPageContainer from './team_page/team_page_container';
 import PuzzleIndexContainer from './puzzles/puzzle_index_container';
 import PuzzleFormContainer from './puzzles/puzzle_form_container';
+import PuzzleDetailContainer from './puzzles/puzzle_detail_container';
 
 const Root = ({store}) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
@@ -37,7 +38,7 @@ const Root = ({store}) => {
               onEnter={_redirectUnlessLoggedIn}>
               <Route path="puzzles" component={PuzzleIndexContainer}/>
               <Route path="new-puzzle" component={PuzzleFormContainer}/>
-              <Route path="puzzles/:puzzleId" component={PuzzleContainer} />
+              <Route path="puzzles/:puzzleId" component={PuzzleDetailContainer} />
             </Route>
           </Route>
         </Route>
@@ -45,7 +46,5 @@ const Root = ({store}) => {
     </Provider>
   );
 };
-
-const PuzzleContainer = () => (<div>Puzzle Home!</div>);
 
 export default Root;

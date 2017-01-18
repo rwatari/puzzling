@@ -92,9 +92,20 @@ div.main-content > div {
   margin: 30px auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 a:hover > h1, a:hover > h2, a:hover > h3, a:hover > h4  {
   text-decoration: underline;
+}
+
+.inactive-button {
+  color: grey;
+  border: 1px solid grey;
+
+  &:hover, &:active {
+    color: grey;
+    background-color: white;
+    box-shadow: 0 1px 0 0 darkgrey;
+    cursor: default;
+  }
 }

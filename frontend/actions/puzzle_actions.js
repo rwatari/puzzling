@@ -46,6 +46,16 @@ export const createPuzzle = puzzle => dispatch => (
   )
 );
 
+export const updatePuzzle = puzzle => dispatch => (
+  PuzzleUtil.updatePuzzle(puzzle).then(
+    newPuzzle => {
+      dispatch(receivePuzzle(newPuzzle));
+      return newPuzzle;
+    },
+    err => dispatch(receivePuzzleErrors(err.responseJSON))
+  )
+);
+
 export const createSolving = solving => dispatch => (
   PuzzleUtil.createSolving(solving).then(
     puzzle => dispatch(receivePuzzle(puzzle))

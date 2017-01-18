@@ -31,7 +31,9 @@ class PuzzleIndex extends React.Component {
     const {
       puzzles,
       requestSolvedPuzzles,
-      requestUnsolvedPuzzles
+      requestUnsolvedPuzzles,
+      currentUser,
+      createSolving
     } = this.props;
 
     let mainContent;
@@ -45,7 +47,10 @@ class PuzzleIndex extends React.Component {
       mainContent = (
         <ul className="team-partial-content">
           {Object.keys(puzzles).map(id => (
-            <PuzzleIndexItem key={id} puzzle={puzzles[id]}/>
+            <PuzzleIndexItem key={id}
+              puzzle={puzzles[id]}
+              currentUser={currentUser}
+              createSolving={createSolving}/>
           ))}
         </ul>
       );

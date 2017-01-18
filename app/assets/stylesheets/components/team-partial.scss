@@ -24,9 +24,30 @@
     display: flex;
     justify-content: space-between;
 
+    .item-info {
+      width: 100%;
+    }
+
     .item-header {
-      width: 80%;
+      width: 90%;
       padding: 0 10px;
+    }
+
+    button {
+      width: 100px;
+      text-align: center;
+
+      &.inactive-button {
+        color: grey;
+        border: 1px solid grey;
+
+        &:hover, &:active {
+          color: grey;
+          background-color: white;
+          box-shadow: 0 1px 0 0 darkgrey;
+          cursor: default;
+        }
+      }
     }
   }
 

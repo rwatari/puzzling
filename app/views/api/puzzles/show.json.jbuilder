@@ -1,1 +1,1 @@
-json.partial! 'puzzle', puzzle: @puzzle
+json.partial! 'api/puzzles/puzzle', puzzle: @puzzle

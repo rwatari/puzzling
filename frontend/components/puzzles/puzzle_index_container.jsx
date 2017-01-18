@@ -1,9 +1,13 @@
 import {connect} from 'react-redux';
-import {requestTeamPuzzles} from '../../actions/puzzle_actions';
+import {
+  requestTeamPuzzles,
+  createSolving
+} from '../../actions/puzzle_actions';
 import PuzzleIndex from './puzzle_index';
 
 const mapStateToProps = state => ({
-  puzzles: state.puzzles
+  puzzles: state.puzzles,
+  currentUser: state.session
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -14,7 +18,8 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   requestUnsolvedPuzzles: () => dispatch(requestTeamPuzzles({
     team_id: ownProps.params.teamId,
     solved: false
-  }))
+  })),
+  createSolving: solving => dispatch(createSolving(solving))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PuzzleIndex);

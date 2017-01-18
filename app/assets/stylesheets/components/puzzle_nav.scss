@@ -39,4 +39,9 @@
     border-bottom: 1px solid black;
     z-index: 1
   }
+
+  .inactive-tab:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
 }

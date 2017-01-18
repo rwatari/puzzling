@@ -1,4 +1,6 @@
 import React from 'react';
+import {isEmpty} from 'lodash';
+import {Link} from 'react-router';
 import PuzzleIndexItem from './puzzle_index_item';
 
 class PuzzleIndex extends React.Component {
@@ -32,27 +34,42 @@ class PuzzleIndex extends React.Component {
       requestUnsolvedPuzzles
     } = this.props;
 
-    return (
-      <div className="team-content-partial">
-        <h3>Puzzles</h3>
-        <h4>Add a puzzle</h4>
-        <nav className="puzzle-index-nav">
-          <ul>
-            <li className={(this.state.activeTab === "unsolved") ? "active-tab" : ""}
-              onClick={this.handleTabClick("unsolved")}>
-              <h4>Unsolved</h4>
-            </li>
-            <li className={(this.state.activeTab === "solved") ? "active-tab" : ""}
-              onClick={this.handleTabClick("solved")}>
-              <h4>Solved</h4>
-            </li>
-          </ul>
-        </nav>
+    let mainContent;
+    if (isEmpty(puzzles)) {
+      mainContent = (
+        <div className="team-partial-content">
+          <h3>No puzzles!</h3>
+        </div>
+      );
+    } else {
+      mainContent = (
         <ul className="team-partial-content">
           {Object.keys(puzzles).map(id => (
             <PuzzleIndexItem key={id} puzzle={puzzles[id]}/>
           ))}
         </ul>
+      );
+    }
+
+    return (
+      <div className="team-partial">
+        <h3>Puzzles</h3>
+        <Link to={`/teams/${this.props.params.teamId}/new-puzzle`}>
+          <h4>Add a puzzle</h4>
+        </Link>
+        <nav className="puzzle-index-nav">
+          <ul>
+            <li className={(this.state.activeTab === "unsolved") ? "active-tab" : "inactive-tab"}
+              onClick={this.handleTabClick("unsolved")}>
+              <h4>Unsolved</h4>
+            </li>
+            <li className={(this.state.activeTab === "solved") ? "active-tab" : "inactive-tab"}
+              onClick={this.handleTabClick("solved")}>
+              <h4>Solved</h4>
+            </li>
+          </ul>
+        </nav>
+        {mainContent}
       </div>
     );
   }

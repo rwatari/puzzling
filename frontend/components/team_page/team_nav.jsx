@@ -9,15 +9,21 @@ const TeamNav = ({team}) => {
           <h3>{team.name}</h3>
         </Link>
         <ul className="team-nav-options">
-          <Link to={`/teams/${team.id}/messages`} activeClassName="active">
-            <li><h4>Messages</h4></li>
-          </Link>
-          <Link to={`/teams/${team.id}/puzzles`} activeClassName="active">
-            <li><h4>Puzzles</h4></li>
-          </Link>
-          <Link to={`/teams/${team.id}/schedule`} activeClassName="active">
-            <li><h4>Schedule</h4></li>
-          </Link>
+          <li>
+            <Link to={`/teams/${team.id}/messages`} activeClassName="active">
+              <h4>Messages</h4>
+            </Link>
+          </li>
+          <li>
+            <Link to={`/teams/${team.id}/puzzles`} activeClassName="active">
+              <h4>Puzzles</h4>
+            </Link>
+          </li>
+          <li>
+            <Link to={`/teams/${team.id}/schedule`} activeClassName="active">
+              <h4>Schedule</h4>
+            </Link>
+          </li>
         </ul>
       </nav>
     );

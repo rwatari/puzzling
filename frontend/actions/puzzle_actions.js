@@ -38,7 +38,10 @@ export const requestPuzzle = id => dispatch => (
 
 export const createPuzzle = puzzle => dispatch => (
   PuzzleUtil.createPuzzle(puzzle).then(
-    newPuzzle => dispatch(receivePuzzle(newPuzzle)),
+    newPuzzle => {
+      dispatch(receivePuzzle(newPuzzle));
+      return newPuzzle;
+    },
     err => dispatch(receivePuzzleErrors(err.responseJSON))
   )
 );

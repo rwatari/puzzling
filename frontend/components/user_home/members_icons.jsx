@@ -12,7 +12,7 @@ const MembersIcons = ({members}) => {
         title={username}
         alt={username}
         key={i}>
-        <h4>{username[0]}</h4>
+        <h5>{username[0]}</h5>
       </div>
     );
   }
@@ -24,7 +24,7 @@ const MembersIcons = ({members}) => {
         title={`and ${membersCount - 4} more members`}
         alt={`and ${membersCount - 4} more members`}
         key={5}>
-        <h4>{countText}</h4>
+        <h5>{countText}</h5>
       </div>
     );
   }

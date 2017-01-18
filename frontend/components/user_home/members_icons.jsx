@@ -2,11 +2,13 @@ import React from 'react';
 
 const MembersIcons = ({members}) => {
   const icons = [];
-  const membersCount = members.length;
+  const memberIds = Object.keys(members);
+  const membersCount = memberIds.length;
   const limit = (membersCount > 5) ? 4 : membersCount;
 
   for (let i = 0; i < limit; i++) {
-    let username = members[i].username;
+    let memberId = memberIds[i];
+    let username = members[memberId].username;
     icons.push(
       <div className="user-icon-small"
         title={username}

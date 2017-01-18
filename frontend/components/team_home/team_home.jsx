@@ -48,8 +48,8 @@ class TeamHome extends React.Component {
         <div className="team-members">
           <h3>Team members</h3>
           <ul>
-            {team.members.map(member => (
-              <li key={member.id}>{member.username}</li>
+            {Object.keys(team.members).map(id => (
+              <li key={id}>{team.members[id].username}</li>
             ))}
           </ul>
         </div>

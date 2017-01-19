@@ -9,6 +9,7 @@ import TeamPageContainer from './team_page/team_page_container';
 import PuzzleIndexContainer from './puzzles/puzzle_index_container';
 import PuzzleFormContainer from './puzzles/puzzle_form_container';
 import PuzzleDetailContainer from './puzzles/puzzle_detail_container';
+import MessageIndexContainer from './messages/message_index_container';
 
 const Root = ({store}) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
@@ -39,6 +40,7 @@ const Root = ({store}) => {
               <Route path="puzzles" component={PuzzleIndexContainer}/>
               <Route path="new-puzzle" component={PuzzleFormContainer}/>
               <Route path="puzzles/:puzzleId" component={PuzzleDetailContainer} />
+              <Route path="messages" component={MessageIndexContainer}/>
             </Route>
           </Route>
         </Route>

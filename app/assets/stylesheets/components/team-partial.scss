@@ -41,6 +41,12 @@
       flex-direction: column;
       justify-content: space-between;
 
+      span {
+        margin-left: 10px;
+        display: flex;
+        align-items: center;
+      }
+
       .members-icons {
         margin-bottom: 0;
         margin-left: 3px;

@@ -58,17 +58,11 @@
       id: 1,
       teamId: 53,
       name: "Runaround at noon!",
-      startDate: "Sun, 15 Jan 2017 12:00:00 +0000"
+      description: "Kresge Auditorium. Bring the clues from 'Disco Ball' and some good running shoes."
+      startDate: "Sun, 15 Jan 2017 12:00:00 +0000",
+      endDate: "Sun, 15 Jan 2017 13:00:00 +0000"
     }
   },
-  scheduleEventDetail: {
-    id: 1,
-    teamId: 53,
-    name: "Runaround at noon!",
-    description: "Kresge Auditorium. Bring the clues from 'Disco Ball' and some good running shoes."
-    startDate: "Sun, 15 Jan 2017 12:00:00 +0000",
-    endDate: "Sun, 15 Jan 2017 13:00:00 +0000"
-  }
   // bonus
   comments: {
     6: {

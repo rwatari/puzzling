@@ -19,7 +19,7 @@ team1 = Team.new(
    name: 'Panic Mages - MH2015', hunt_name: 'Mystery Hunt 2015'
 )
 team2 = Team.new(
-   name: 'Panic Mages - MH2016', hunt_name: 'Mystery Hunt 2016'
+   name: 'Panic Mages - MH2017', hunt_name: 'Mystery Hunt 2017'
 )
 
 team1.admin = guest
@@ -74,4 +74,19 @@ Message.create([
     body: "Go to the hunt website to see the first batch of puzzles. Our team login info is as follows: \n\n username: PanicMages\npassword: panicatthedisco" },
   { author_id: user2.id, team_id: team2.id, title: 'Puzzle Hunting resources',
     body: 'Can anyone recommend some resources for hunting? This is my first hunt' }
+])
+
+ScheduleEvent.create([
+  { team_id: team1.id, title: 'HQ Setup',
+    description: "Come by at 6 pm to help set up HQ! We'll also be getting dinner",
+    start_datetime: Time.new(2015, 1, 15, 18, 0, 0, "-05:00"),
+    end_datetime: Time.new(2015, 1, 15, 20, 0, 0, "-05:00") },
+  { team_id: team1.id, title: 'Hunt start',
+    description: "Get hyped! The hunt starts at noon!",
+    start_datetime: Time.new(2015, 1, 16, 12, 0, 0, "-05:00"),
+    end_datetime: Time.new(2015, 1, 19, 12, 0, 0, "-05:00") },
+  { team_id: team2.id, title: "Next year's hunt",
+    description: "Let's get ready for next year!!",
+    start_datetime: Time.new(2018, 1, 19, 12, 0, 0, "-05:00"),
+    end_datetime: Time.new(2018, 1, 22, 12, 0, 0, "-05:00") }
 ])

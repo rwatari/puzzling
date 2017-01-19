@@ -17,6 +17,8 @@ class Api::ScheduleEventsController < ApplicationController
           .schedule_events
           .where("end_datetime >= ?", Time.current)
           .order(:start_datetime)
+      end
+
       render :index
     else
       render json: ["Current user is not a member of this team"], status: 403

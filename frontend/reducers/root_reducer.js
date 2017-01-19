@@ -13,7 +13,7 @@ const _appReducer = combineReducers({
   teams: TeamsReducer,
   puzzles: PuzzlesReducer,
   messages: MessagesReducer,
-  ScheduleEvents: ScheduleEventsReducer
+  scheduleEvents: ScheduleEventsReducer
 });
 
 const RootReducer = (state, action) => {

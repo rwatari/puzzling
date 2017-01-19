@@ -27,6 +27,8 @@ class Team < ApplicationRecord
 
   has_many :messages
 
+  has_many :schedule_events
+
   validates :name, :hunt_name, presence: true
   validates :name, uniqueness: true
 end

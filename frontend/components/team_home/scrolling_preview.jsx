@@ -11,7 +11,7 @@ const ScrollingPreview = ({header, content, noContentMessage}) => {
         <h5>{content[id].title}</h5>
       </li>
     ));
-    
+
     scrollingContent = <ul>{scrollingItems}</ul>;
   }
 

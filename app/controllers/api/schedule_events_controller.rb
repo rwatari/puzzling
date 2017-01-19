@@ -6,7 +6,17 @@ class Api::ScheduleEventsController < ApplicationController
       .first
 
     if team
-      @s_events = team.schedule_events.order(:start_datetime)
+      case params[:query]
+      when "past"
+        @s_events = team
+          .schedule_events
+          .where("end_datetime <= ?", Time.current)
+          .order(:start_datetime)
+      when "future"
+        @s_events = team
+          .schedule_events
+          .where("end_datetime >= ?", Time.current)
+          .order(:start_datetime)
       render :index
     else
       render json: ["Current user is not a member of this team"], status: 403

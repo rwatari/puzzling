@@ -4,10 +4,6 @@ import {Link} from 'react-router';
 import MessageIndexItem from './message_index_item';
 
 class MessageIndex extends React.Component {
-  constructor() {
-    super();
-  }
-
   componentDidMount() {
     this.props.requestMessages(this.props.params.teamId);
   }

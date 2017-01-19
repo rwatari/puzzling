@@ -47,7 +47,7 @@ puzzle2 = Puzzle.create(
   team_id: team1.id,
   title: "Strange Tidings",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  solved: false
+  solved: true
 )
 
 puzzle3 = Puzzle.create(
@@ -65,4 +65,13 @@ Solving.create([
   { user_id: user2.id, puzzle_id: puzzle1.id },
   { user_id: user2.id, puzzle_id: puzzle3.id },
   { user_id: user3.id, puzzle_id: puzzle3.id },
+])
+
+Message.create([
+  { author_id: guest.id, team_id: team1.id, title: 'Hunt Starting!!',
+    body: 'The hunt is starting in 20 minutes everyone!' },
+  { author_id: user1.id, team_id: team1.id, title: 'Round 1 available',
+    body: "Go to the hunt website to see the first batch of puzzles. Our team login info is as follows: \n\n username: PanicMages\npassword: panicatthedisco" },
+  { author_id: user2.id, team_id: team2.id, title: 'Puzzle Hunting resources',
+    body: 'Can anyone recommend some resources for hunting? This is my first hunt' }
 ])

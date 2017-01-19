@@ -12,6 +12,9 @@ import PuzzleDetailContainer from './puzzles/puzzle_detail_container';
 import MessageIndexContainer from './messages/message_index_container';
 import MessageFormContainer from './messages/message_form_container';
 import MessageDetailContainer from './messages/message_detail_container';
+import ScheduleEventIndexContainer from './schedule_events/schedule_event_index_container';
+import ScheduleEventFormContainer from './schedule_events/schedule_event_form_container';
+import ScheduleEventDetailContainer from './schedule_events/schedule_event_detail_container';
 
 const Root = ({store}) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
@@ -45,6 +48,9 @@ const Root = ({store}) => {
               <Route path="messages" component={MessageIndexContainer}/>
               <Route path="new-message" component={MessageFormContainer}/>
               <Route path="messages/:messageId" component={MessageDetailContainer} />
+              <Route path="schedule" component={ScheduleEventIndexContainer}/>
+              <Route path="schedule/:scheduleEventId" component={ScheduleEventDetailContainer} />
+              <Route path="new-event" component={ScheduleEventFormContainer}/>
             </Route>
           </Route>
         </Route>

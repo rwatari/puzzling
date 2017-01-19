@@ -69,7 +69,7 @@ class PuzzleIndex extends React.Component {
         <Link to={`/teams/${this.props.params.teamId}/new-puzzle`}>
           <h4>Add a puzzle</h4>
         </Link>
-        <nav className="puzzle-index-nav">
+        <nav className="tab-index-nav">
           <ul>
             <li className={(this.state.activeTab === "unsolved") ? "active-tab" : "inactive-tab"}
               onClick={this.handleTabClick("unsolved")}>

@@ -76,6 +76,20 @@
     textarea {
       height: 300px;
     }
+
+    .form-calendars {
+      display: flex;
+      justify-content: space-between;
+
+      label {
+        margin-right: 30px;
+
+        input {
+          margin-left: 0;
+          width: 92%;
+        }
+      }
+    }
   }
 }
 

@@ -48,7 +48,7 @@ class UserPuzzleIndex extends React.Component {
     return (
       <div className="card-group">
         <h3>Puzzles</h3>
-        <nav className="puzzle-index-nav">
+        <nav className="tab-index-nav">
           <ul>
             <li className={(this.state.activeTab === "unsolved") ? "active-tab" : "inactive-tab"}
               onClick={this.handleTabClick("unsolved")}>

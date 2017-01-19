@@ -1,1 +1,1 @@
-json.extract! s_event, :title, :description, :start_datetime, :end_datetime, :team_id
+json.extract! s_event, :id, :title, :description, :start_datetime, :end_datetime, :team_id

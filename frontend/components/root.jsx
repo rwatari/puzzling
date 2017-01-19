@@ -10,6 +10,8 @@ import PuzzleIndexContainer from './puzzles/puzzle_index_container';
 import PuzzleFormContainer from './puzzles/puzzle_form_container';
 import PuzzleDetailContainer from './puzzles/puzzle_detail_container';
 import MessageIndexContainer from './messages/message_index_container';
+import MessageFormContainer from './messages/message_form_container';
+import MessageDetailContainer from './messages/message_detail_container';
 
 const Root = ({store}) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
@@ -41,6 +43,8 @@ const Root = ({store}) => {
               <Route path="new-puzzle" component={PuzzleFormContainer}/>
               <Route path="puzzles/:puzzleId" component={PuzzleDetailContainer} />
               <Route path="messages" component={MessageIndexContainer}/>
+              <Route path="new-message" component={MessageFormContainer}/>
+              <Route path="messages/:messageId" component={MessageDetailContainer} />
             </Route>
           </Route>
         </Route>

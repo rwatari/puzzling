@@ -11,13 +11,13 @@ const TeamNav = ({team, location}) => {
         <ul className="team-nav-options">
           <li>
             <Link to={`/teams/${team.id}/messages`}
-              className={(location.pathname.includes('messages')) ? "active" : null}>
+              className={(location.pathname.includes('message')) ? "active" : null}>
               <h4>Messages</h4>
             </Link>
           </li>
           <li>
             <Link to={`/teams/${team.id}/puzzles`}
-              className={(location.pathname.includes('puzzles')) ? "active" : null}>
+              className={(location.pathname.includes('puzzle')) ? "active" : null}>
               <h4>Puzzles</h4>
             </Link>
           </li>

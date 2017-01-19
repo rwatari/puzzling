@@ -9,7 +9,8 @@ import merge from 'lodash/merge';
 const _defaultState = {
   session:[],
   team: [],
-  puzzle: []
+  puzzle: [],
+  message: []
 };
 
 const FormErrorsReducer = (state = _defaultState, action) => {

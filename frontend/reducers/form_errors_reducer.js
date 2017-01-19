@@ -2,7 +2,8 @@ import {
   RECEIVE_SESSION_ERRORS,
   RECEIVE_TEAM_ERRORS,
   RECEIVE_PUZZLE_ERRORS,
-  RECEIVE_MESSAGE_ERRORS
+  RECEIVE_MESSAGE_ERRORS,
+  RECEIVE_SCHEDULE_EVENT_ERRORS
 } from '../actions/form_error_actions';
 import merge from 'lodash/merge';
 
@@ -10,7 +11,8 @@ const _defaultState = {
   session:[],
   team: [],
   puzzle: [],
-  message: []
+  message: [],
+  scheduleEvent: []
 };
 
 const FormErrorsReducer = (state = _defaultState, action) => {
@@ -24,6 +26,8 @@ const FormErrorsReducer = (state = _defaultState, action) => {
       return merge({}, _defaultState, {puzzle: action.errors});
     case RECEIVE_MESSAGE_ERRORS:
       return merge({}, _defaultState, {message: action.errors});
+    case RECEIVE_SCHEDULE_EVENT_ERRORS:
+      return merge({}, _defaultState, {scheduleEvent: action.errors});
     default:
       return _defaultState;
   }

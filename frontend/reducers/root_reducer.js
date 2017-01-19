@@ -5,13 +5,15 @@ import FormErrorsReducer from './form_errors_reducer';
 import TeamsReducer from './teams_reducer';
 import PuzzlesReducer from './puzzles_reducer';
 import MessagesReducer from './messages_reducer';
+import ScheduleEventsReducer from './schedule_events_reducer';
 
 const _appReducer = combineReducers({
   session: SessionReducer,
   formErrors: FormErrorsReducer,
   teams: TeamsReducer,
   puzzles: PuzzlesReducer,
-  messages: MessagesReducer
+  messages: MessagesReducer,
+  ScheduleEvents: ScheduleEventsReducer
 });
 
 const RootReducer = (state, action) => {

@@ -2,11 +2,11 @@ class Api::ScheduleEventsController < ApplicationController
   def index
     team = current_user
       .joined_teams
-      .where(id: params[:team_id])
+      .where(id: params[:query][:team_id])
       .first
 
     if team
-      case params[:query]
+      case params[:query][:filter_by]
       when "past"
         @s_events = team
           .schedule_events

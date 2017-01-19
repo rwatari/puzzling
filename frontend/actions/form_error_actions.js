@@ -2,6 +2,7 @@ export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const RECEIVE_TEAM_ERRORS = 'RECEIVE_TEAM_ERRORS';
 export const RECEIVE_PUZZLE_ERRORS = 'RECEIVE_PUZZLE_ERRORS';
 export const RECEIVE_MESSAGE_ERRORS = 'RECEIVE_MESSAGE_ERRORS';
+export const RECEIVE_SCHEDULE_EVENT_ERRORS = 'RECEIVE_SCHEDULE_EVENT_ERRORS';
 
 export const receiveSessionErrors = errors => ({
   type: RECEIVE_SESSION_ERRORS,
@@ -20,5 +21,10 @@ export const receivePuzzleErrors = errors => ({
 
 export const receiveMessageErrors = errors => ({
   type: RECEIVE_MESSAGE_ERRORS,
+  errors
+});
+
+export const receiveScheduleEventErrors = errors => ({
+  type: RECEIVE_SCHEDULE_EVENT_ERRORS,
   errors
 });

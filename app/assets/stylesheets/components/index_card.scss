@@ -143,6 +143,11 @@ div.user-icon-small {
     overflow-y: auto;
     margin: 34px 0 5px 0;
 
+    ul {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
     li {
       padding: 5px;
       border-bottom: 1px solid lightgrey;

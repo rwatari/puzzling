@@ -11,6 +11,7 @@ class TeamHome extends React.Component {
       requestTeam,
       requestUnsolvedPuzzles,
       requestMessages,
+      requestScheduleEvents,
       params} = this.props;
 
     if (isEmpty(team)) {
@@ -20,6 +21,7 @@ class TeamHome extends React.Component {
     }
     requestUnsolvedPuzzles(params.teamId);
     requestMessages(params.teamId);
+    requestScheduleEvents(params.teamId);
   }
 
   componentWillReceiveProps(newProps) {
@@ -29,12 +31,14 @@ class TeamHome extends React.Component {
       requestUnsolvedPuzzles,
       requestTeam,
       requestMessages,
+      requestScheduleEvents
     } = this.props;
     if (location.pathname !== newProps.location.pathname || isEmpty(team)) {
       const newId = newProps.params.teamId;
       requestTeam(newId);
       requestUnsolvedPuzzles(newId);
       requestMessages(newId);
+      requestScheduleEvents(newId);
     }
   }
 
@@ -43,7 +47,7 @@ class TeamHome extends React.Component {
   }
 
   render() {
-    const {team, puzzles, messages} = this.props;
+    const {team, puzzles, messages, scheduleEvents} = this.props;
     return isEmpty(team) ? <div></div> :
     (
       <div className="main-content">
@@ -72,7 +76,10 @@ class TeamHome extends React.Component {
             </li>
             <li className="item-card">
               <Link to={`/teams/${team.id}/schedule`}>
-                <h4>Schedule</h4>
+                <ScrollingPreview
+                  header="Schedule"
+                  content={scheduleEvents}
+                  noContentMessage="No upcoming events!"/>
               </Link>
             </li>
           </ul>

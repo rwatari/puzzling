@@ -6,7 +6,12 @@ import ScrollingPreview from './scrolling_preview';
 
 class TeamHome extends React.Component {
   componentDidMount() {
-    const {team, requestTeam, requestUnsolvedPuzzles, params} = this.props;
+    const {
+      team,
+      requestTeam,
+      requestUnsolvedPuzzles,
+      requestMessages,
+      params} = this.props;
 
     if (isEmpty(team)) {
       requestTeam(params.teamId).fail(
@@ -14,6 +19,7 @@ class TeamHome extends React.Component {
       );
     }
     requestUnsolvedPuzzles(params.teamId);
+    requestMessages(params.teamId);
   }
 
   componentWillReceiveProps(newProps) {
@@ -22,11 +28,13 @@ class TeamHome extends React.Component {
       location,
       requestUnsolvedPuzzles,
       requestTeam,
-      params
+      requestMessages,
     } = this.props;
     if (location.pathname !== newProps.location.pathname || isEmpty(team)) {
-      requestTeam(params.teamId);
-      requestUnsolvedPuzzles(newProps.params.teamId);
+      const newId = newProps.params.teamId;
+      requestTeam(newId);
+      requestUnsolvedPuzzles(newId);
+      requestMessages(newId);
     }
   }
 
@@ -35,7 +43,7 @@ class TeamHome extends React.Component {
   }
 
   render() {
-    const {team, puzzles} = this.props;
+    const {team, puzzles, messages} = this.props;
     return isEmpty(team) ? <div></div> :
     (
       <div className="main-content">
@@ -48,7 +56,10 @@ class TeamHome extends React.Component {
           <ul className="card-container">
             <li className="item-card">
               <Link to={`/teams/${team.id}/messages`}>
-                <h4>Message Board</h4>
+                <ScrollingPreview
+                  header="Message Board"
+                  content={messages}
+                  noContentMessage="No messages!"/>
               </Link>
             </li>
             <li className="item-card">

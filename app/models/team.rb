@@ -25,6 +25,8 @@ class Team < ApplicationRecord
 
   has_many :puzzles
 
+  has_many :messages
+
   validates :name, :hunt_name, presence: true
   validates :name, uniqueness: true
 end

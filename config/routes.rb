@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     resources :memberships, only: [:create]
     resources :puzzles, only: [:index, :show, :create, :update]
     resources :solvings, only: [:create, :destroy]
+    resources :messages, only: [:index, :show, :create]
   end
 end

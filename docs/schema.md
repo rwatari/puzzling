@@ -52,7 +52,7 @@ messageable | references| not null, foreign key (references teams or puzzles), p
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-name        | string    | not null
+title       | string    | not null
 description | text      |
 start_date  | datetime  | not null
 end_date    | datetime  | not null

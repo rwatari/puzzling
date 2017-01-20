@@ -1,10 +1,11 @@
 .card-group {
   align-items: center;
 
-  & > h3:first-of-type {
+  & > h2:first-of-type {
     width: 70%;
     text-align: center;
     border-bottom: 1px solid black;
+    margin-bottom: 10px;
   }
 }
 
@@ -25,11 +26,16 @@
   height: 180px;
   border-radius: 10px;
   margin: 10px;
-  box-shadow: 0px 0px 5px 0px $nav-color;
+  box-shadow: 0 1px 1px 1px $nav-color;
 }
 
 .item-card:hover {
   cursor: pointer;
+  box-shadow: 0 3px 6px 1px $nav-color;
+}
+
+.item-card:active {
+  box-shadow: 0 1px 1px $nav-color;
 }
 
 .item-card a {

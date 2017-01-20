@@ -53,7 +53,7 @@ class TeamIndex extends React.Component {
 
     return (
       <div className="card-group">
-        <h3>Teams</h3>
+        <h2>Teams</h2>
         <ul className="card-container">
           <ReactCSSTransitionGroup
             className="animation-switch"

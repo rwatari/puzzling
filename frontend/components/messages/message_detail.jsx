@@ -2,6 +2,7 @@ import React from 'react';
 import {withRouter} from 'react-router';
 import moment from 'moment';
 import MessageFormContainer from './message_form_container';
+import UserIcon from '../user_home/user_icon';
 
 class MessageDetail extends React.Component {
   constructor() {
@@ -70,12 +71,7 @@ class MessageDetail extends React.Component {
           <p>{message.body}</p>
           <span>
             <h4>Posted {moment(message.created_at).fromNow()} by</h4>
-            <div className="user-icon-small"
-              title={author.username}
-              alt={author.username}
-              key={author.id}>
-              <h5>{author.username[0]}</h5>
-            </div>
+            <UserIcon username={author.username} />
             <h4>{author.username}</h4>
           </span>
         </div>

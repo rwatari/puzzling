@@ -1,34 +1,17 @@
 import React from 'react';
-import djb2 from './djb2';
+import UserIcon from './user_icon';
 
 const MembersIcons = ({members}) => {
   const icons = [];
   const memberIds = Object.keys(members);
   const membersCount = memberIds.length;
   const limit = (membersCount > 5) ? 4 : membersCount;
-  const colors = [
-    "red",
-    "green",
-    "blue",
-    "purple",
-    "orange",
-    "grey",
-    "yellow"
-  ];
 
   for (let i = 0; i < limit; i++) {
     let memberId = memberIds[i];
     let username = members[memberId].username;
-    let color = colors[djb2(username, 7)];
 
-    icons.push(
-      <div className={`user-icon-small ${color}`}
-        title={username}
-        alt={username}
-        key={i}>
-        <h5>{username[0]}</h5>
-      </div>
-    );
+    icons.push(<UserIcon username={username} key={i}/>);
   }
 
   if (membersCount > 5) {

@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 import moment from 'moment';
+import UserIcon from '../user_home/user_icon';
 
 class MessageIndexItem extends React.Component {
   render() {
@@ -22,12 +23,7 @@ class MessageIndexItem extends React.Component {
             <span>
               <h5>{moment(message.created_at).fromNow()}</h5>
               <h4>&nbsp;by</h4>
-              <div className="user-icon-small"
-                title={author.username}
-                alt={author.username}
-                key={author.id}>
-                <h5>{author.username[0]}</h5>
-              </div>
+              <UserIcon username={author.username} />
               <h4>{author.username}</h4>
             </span>
           </div>

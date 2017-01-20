@@ -1,4 +1,5 @@
 import React from 'react';
+import {withRouter} from 'react-router';
 import MessageFormContainer from './message_form_container';
 
 class MessageDetail extends React.Component {
@@ -6,6 +7,7 @@ class MessageDetail extends React.Component {
     super();
     this.state = {showForm: false};
     this.toggleForm = this.toggleForm.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
@@ -22,6 +24,13 @@ class MessageDetail extends React.Component {
     this.setState({showForm: !this.state.showForm});
   }
 
+  handleDelete() {
+    const {deleteMessage, message, router} = this.props;
+    deleteMessage(message.id).then(
+      () => router.push(`/teams/${message.team_id}/messages`)
+    );
+  }
+
   render() {
     const {message, currentUser} = this.props;
     if (this.state.showForm) {
@@ -36,6 +45,11 @@ class MessageDetail extends React.Component {
               <li>
                 <button className="active-button" onClick={this.toggleForm}>
                   <h4>Edit</h4>
+                </button>
+              </li>
+              <li>
+                <button className="active-button" onClick={this.handleDelete}>
+                  <h4>Delete</h4>
                 </button>
               </li>
             </ul>

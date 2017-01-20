@@ -103,15 +103,37 @@
 
 div.user-icon-small {
   height: 30px;
-    width: 30px;
-    background: darkgrey;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 30px;
-    border-radius: 15px;
-    margin: 5px;
+  width: 30px;
+  background: darkgrey;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 30px;
+  border-radius: 15px;
+  margin: 5px;
+
+  &.red {
+    background: $red
+  }
+  &.blue {
+    background: $blue
+  }
+  &.yellow {
+    background: $yellow
+  }
+  &.green {
+    background: $green
+  }
+  &.orange {
+    background: $orange
+  }
+  &.purple {
+    background: $purple
+  }
+  &.grey {
+    background: $grey
+  }
 }
 
 .user-icon-small > h5 {

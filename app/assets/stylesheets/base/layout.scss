@@ -80,6 +80,7 @@ nav.user-nav, nav.splash-nav {
   background-color: $nav-color;
   color: white;
   box-shadow: 0px 1px 5px 1px black;
+  z-index: 5;
 }
 
 .logo {

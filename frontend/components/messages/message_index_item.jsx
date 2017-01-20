@@ -1,20 +1,27 @@
 import React from 'react';
 import {Link} from 'react-router';
-import MembersIcons from '../user_home/members_icons';
+import moment from 'moment';
 
 class MessageIndexItem extends React.Component {
   render() {
     const {message, message: {author}} = this.props;
+    let bodySnippet;
+    if (message.body.length > 120) {
+      bodySnippet = `${message.body.substring(0, 120)}...`;
+    } else {
+      bodySnippet = message.body;
+    }
     return (
       <li className="partial-index-item">
         <Link to={`/teams/${message.team_id}/messages/${message.id}`}>
           <div className="item-info">
             <div className="item-header">
               <h4>{message.title}</h4>
-              <h6>{`${message.body.substring(0, 120)}...`}</h6>
+              <h6>{bodySnippet}</h6>
             </div>
             <span>
-              <h4>- </h4>
+              <h5>{moment(message.created_at).fromNow()}</h5>
+              <h4>&nbsp;by</h4>
               <div className="user-icon-small"
                 title={author.username}
                 alt={author.username}

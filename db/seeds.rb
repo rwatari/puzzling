@@ -7,12 +7,19 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 guest = User.create(username: "guest", password: 'helloworld')
 
-user1 = User.create(username: 'user1', password: SecureRandom.base64)
-user2 = User.create(username: 'user2', password: SecureRandom.base64)
-user3 = User.create(username: 'user3', password: SecureRandom.base64)
+user1 = User.create(username: 'wata', password: SecureRandom.base64)
+user2 = User.create(username: 'haz', password: SecureRandom.base64)
+user3 = User.create(username: 'cats', password: SecureRandom.base64)
 
-10.times do |i|
-  User.create(username: "testing#{i}", password: SecureRandom.base64)
+[
+  "FluffyOctopus",
+  "xXRed-TrollXx",
+  "pizzazombies",
+  "thundercats",
+  "pmiller",
+  "jellybeans"
+].each do |username|
+  User.create(username: username, password: SecureRandom.base64)
 end
 
 team1 = Team.new(
@@ -33,6 +40,7 @@ Membership.create([
   { user_id: guest.id, team_id: team2.id },
   { user_id: user1.id, team_id: team1.id },
   { user_id: user2.id, team_id: team1.id },
+  { user_id: user2.id, team_id: team2.id },
   { user_id: user3.id, team_id: team2.id }
 ])
 
@@ -50,7 +58,28 @@ puzzle2 = Puzzle.create(
   solved: true
 )
 
+puzzle2 = Puzzle.create(
+  team_id: team1.id,
+  title: "Denizens of the Sky",
+  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  solved: true
+)
+
 puzzle3 = Puzzle.create(
+  team_id: team1.id,
+  title: "Choose Your Salad",
+  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  solved: false
+)
+
+puzzle4 = Puzzle.create(
+  team_id: team1.id,
+  title: "Toasting the Toast",
+  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  solved: true
+)
+
+puzzle5 = Puzzle.create(
   team_id: team2.id,
   title: "Another one bites the dust",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -61,17 +90,26 @@ Solving.create([
   { user_id: guest.id, puzzle_id: puzzle1.id },
   { user_id: guest.id, puzzle_id: puzzle2.id },
   { user_id: guest.id, puzzle_id: puzzle3.id },
+  { user_id: guest.id, puzzle_id: puzzle4.id },
+  { user_id: guest.id, puzzle_id: puzzle5.id },
   { user_id: user1.id, puzzle_id: puzzle1.id },
   { user_id: user2.id, puzzle_id: puzzle1.id },
   { user_id: user2.id, puzzle_id: puzzle3.id },
-  { user_id: user3.id, puzzle_id: puzzle3.id },
+  { user_id: user2.id, puzzle_id: puzzle4.id },
+  { user_id: user3.id, puzzle_id: puzzle5.id },
 ])
 
 Message.create([
+  { author_id: guest.id, team_id: team1.id, title: 'Invite Your Friends!',
+    body: 'Every helping hand is a great asset to the team, no matter the background!' },
   { author_id: guest.id, team_id: team1.id, title: 'Hunt Starting!!',
     body: 'The hunt is starting in 20 minutes everyone!' },
   { author_id: user1.id, team_id: team1.id, title: 'Round 1 available',
     body: "Go to the hunt website to see the first batch of puzzles. Our team login info is as follows: \n\n username: PanicMages\npassword: panicatthedisco" },
+  { author_id: guest.id, team_id: team1.id, title: 'Get some sleep',
+    body: "It's been a long day of puzzling. If you haven't already, consider getting some sleep and starting fresh tomorrow." },
+  { author_id: guest.id, team_id: team1.id, title: 'Congrats Team!',
+    body: 'We finished the hunt! See you next year!' },
   { author_id: user2.id, team_id: team2.id, title: 'Puzzle Hunting resources',
     body: 'Can anyone recommend some resources for hunting? This is my first hunt' }
 ])

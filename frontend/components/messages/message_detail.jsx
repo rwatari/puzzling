@@ -1,5 +1,6 @@
 import React from 'react';
 import {withRouter} from 'react-router';
+import moment from 'moment';
 import MessageFormContainer from './message_form_container';
 
 class MessageDetail extends React.Component {
@@ -68,7 +69,7 @@ class MessageDetail extends React.Component {
           <br />
           <p>{message.body}</p>
           <span>
-            <h4>- </h4>
+            <h4>Posted {moment(message.created_at).fromNow()} by</h4>
             <div className="user-icon-small"
               title={author.username}
               alt={author.username}

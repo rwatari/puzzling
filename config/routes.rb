@@ -8,8 +8,9 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :teams, only: [:index, :show, :create]
     resources :memberships, only: [:create]
-    resources :puzzles, only: [:index, :show, :create, :update]
-    resources :solvings, only: [:create, :destroy]
+    resources :puzzles, only: [:index, :show, :create, :update] do
+      resource :solving, only: [:create, :destroy]
+    end
     resources :messages, except: [:new, :edit]
     resources :schedule_events, only: [:index, :show, :create]
   end

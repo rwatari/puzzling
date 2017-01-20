@@ -8,27 +8,33 @@ class PuzzleIndexItem extends React.Component {
     this.handleFollow = this.handleFollow.bind(this);
   }
 
-  handleFollow(e) {
-    e.preventDefault();
-    const {currentUser, puzzle} = this.props;
-    this.props.createSolving({
-      user_id: currentUser.id,
-      puzzle_id: puzzle.id
-    });
+  handleFollow(action) {
+    return e => {
+      e.preventDefault();
+      const {currentUser, puzzle, createSolving, deleteSolving} = this.props;
+      const solvingAction = (
+        (action === "create") ? createSolving : deleteSolving
+      );
+      
+      solvingAction({
+        user_id: currentUser.id,
+        puzzle_id: puzzle.id
+      });
+    };
   }
 
   render() {
-    const {puzzle, currentUser, createSolving} = this.props;
+    const {puzzle, currentUser} = this.props;
     let followButton;
     if (puzzle.solvers[currentUser.id]) {
       followButton = (
-        <button className="inactive-button" disabled={true}>
+        <button className="active-button" onClick={this.handleFollow("delete")}>
           <h4>Following</h4>
         </button>
       );
     } else {
       followButton = (
-        <button className="active-button" onClick={this.handleFollow}>
+        <button className="active-button" onClick={this.handleFollow("create")}>
           <h4>Follow</h4>
         </button>
       );

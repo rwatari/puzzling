@@ -1,7 +1,8 @@
 import {connect} from 'react-redux';
 import {
   requestTeamPuzzles,
-  createSolving
+  createSolving,
+  deleteSolving
 } from '../../actions/puzzle_actions';
 import PuzzleIndex from './puzzle_index';
 
@@ -19,7 +20,8 @@ const mapDispatchToProps = dispatch => ({
     team_id: teamId,
     solved: false
   })),
-  createSolving: solving => dispatch(createSolving(solving))
+  createSolving: solving => dispatch(createSolving(solving)),
+  deleteSolving: solving => dispatch(deleteSolving(solving))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PuzzleIndex);

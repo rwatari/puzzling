@@ -61,3 +61,9 @@ export const createSolving = solving => dispatch => (
     puzzle => dispatch(receivePuzzle(puzzle))
   )
 );
+
+export const deleteSolving = solving => dispatch => (
+  PuzzleUtil.deleteSolving(solving).then(
+    puzzle => dispatch(receivePuzzle(puzzle))
+  )
+);

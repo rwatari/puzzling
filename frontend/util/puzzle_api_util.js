@@ -47,7 +47,15 @@ export const updatePuzzle = puzzle => (
 export const createSolving = solving => (
   $.ajax({
     method: 'POST',
-    url: `api/solvings`,
+    url: `api/puzzles/${solving.puzzle_id}/solving`,
+    data: {solving}
+  })
+);
+
+export const deleteSolving = solving => (
+  $.ajax({
+    method: 'DELETE',
+    url: `api/puzzles/${solving.puzzle_id}/solving`,
     data: {solving}
   })
 );

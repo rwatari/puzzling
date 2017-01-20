@@ -46,7 +46,8 @@ class PuzzleIndex extends React.Component {
       requestSolvedPuzzles,
       requestUnsolvedPuzzles,
       currentUser,
-      createSolving
+      createSolving,
+      deleteSolving
     } = this.props;
 
     let mainContent;
@@ -63,7 +64,8 @@ class PuzzleIndex extends React.Component {
             <PuzzleIndexItem key={id}
               puzzle={puzzles[id]}
               currentUser={currentUser}
-              createSolving={createSolving}/>
+              createSolving={createSolving}
+              deleteSolving={deleteSolving}/>
           ))}
         </ul>
       );

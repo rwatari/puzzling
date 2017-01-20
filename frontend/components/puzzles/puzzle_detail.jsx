@@ -1,4 +1,5 @@
 import React from 'react';
+import MembersIcons from '../user_home/members_icons';
 
 class PuzzleDetail extends React.Component {
   constructor() {
@@ -26,13 +27,19 @@ class PuzzleDetail extends React.Component {
     });
   }
 
-  handleFollow(e) {
-    e.preventDefault();
-    const {currentUser, puzzle} = this.props;
-    this.props.createSolving({
-      user_id: currentUser.id,
-      puzzle_id: puzzle.id
-    });
+  handleFollow(action) {
+    return e => {
+      e.preventDefault();
+      const {currentUser, puzzle, createSolving, deleteSolving} = this.props;
+      const solvingAction = (
+        (action === "create") ? createSolving : deleteSolving
+      );
+
+      solvingAction({
+        user_id: currentUser.id,
+        puzzle_id: puzzle.id
+      });
+    };
   }
 
   render() {
@@ -41,13 +48,13 @@ class PuzzleDetail extends React.Component {
       let followButton;
       if (puzzle.solvers[currentUser.id]) {
         followButton = (
-          <button className="inactive-button" disabled={true}>
+          <button className="active-button" onClick={this.handleFollow("delete")}>
             <h4>Following</h4>
           </button>
         );
       } else {
         followButton = (
-          <button className="active-button" onClick={this.handleFollow}>
+          <button className="active-button" onClick={this.handleFollow("create")}>
             <h4>Follow</h4>
           </button>
         );
@@ -76,6 +83,8 @@ class PuzzleDetail extends React.Component {
           </div>
           <h3>Description:</h3>
           <p>{puzzle.description}</p>
+          <h3>Solvers:</h3>
+          <MembersIcons members={puzzle.solvers}/>
         </div>
       );
     } else {

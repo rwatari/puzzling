@@ -10,7 +10,9 @@ const PuzzlesReducer = (state = {}, action) => {
     case RECEIVE_PUZZLES:
       return action.puzzles;
     case RECEIVE_PUZZLE:
-      return merge({}, state, {[action.puzzle.id]: action.puzzle});
+      const newState = merge({}, state);
+      newState[action.puzzle.id] = action.puzzle;
+      return newState;
     default:
       return state;
   }

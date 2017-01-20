@@ -10,6 +10,13 @@ class Api::SolvingsController < ApplicationController
   end
 
   def destroy
+    solving = current_user
+      .solvings
+      .find_by_puzzle_id(solving_params[:puzzle_id])
+    @puzzle = solving.puzzle
+    
+    solving.destroy!
+    render 'api/puzzles/show'
   end
 
   private

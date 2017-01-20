@@ -3,7 +3,8 @@ import {requestMessage} from '../../actions/message_actions';
 import MessageDetail from './message_detail';
 
 const mapStateToProps = (state, ownProps) => ({
-  message: state.messages[ownProps.params.messageId]
+  message: state.messages[ownProps.params.messageId],
+  currentUser: state.session
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -3,6 +3,7 @@ import {receiveMessageErrors} from './form_error_actions';
 
 export const RECEIVE_MESSAGES = 'RECEIVE_MESSAGES';
 export const RECEIVE_MESSAGE = 'RECEIVE_MESSAGE';
+export const REMOVE_MESSAGE = 'REMOVE_MESSAGE';
 
 // object actions
 
@@ -15,6 +16,11 @@ export const receiveMessage = message => ({
   type: RECEIVE_MESSAGE,
   message
 });
+
+export const removeMessage = message => ({
+  type: REMOVE_MESSAGE,
+  message
+})
 
 // thunks
 
@@ -37,5 +43,21 @@ export const createMessage = message => dispatch => (
       return newMessage;
     },
     err => dispatch(receiveMessageErrors(err.responseJSON))
+  )
+);
+
+export const updateMessage = message => dispatch => (
+  MessageUtil.updateMessage(message).then(
+    newMessage => {
+      dispatch(receiveMessage(newMessage));
+      return newMessage;
+    },
+    err => dispatch(receiveMessageErrors(err.responseJSON))
+  )
+);
+
+export const deleteMessage = id => dispatch => (
+  MessageUtil.deleteMessage(id).then(
+    message => dispatch(removeMessage(message))
   )
 );

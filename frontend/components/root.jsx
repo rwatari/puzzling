@@ -42,14 +42,22 @@ const Root = ({store}) => {
             <IndexRoute component={TeamHomeContainer}/>
             <Route component={TeamPageContainer}
               onEnter={_redirectUnlessLoggedIn}>
-              <Route path="puzzles" component={PuzzleIndexContainer}/>
+              <Route path="puzzles">
+                <IndexRoute component={PuzzleIndexContainer}/>
+                <Route path=":puzzleId" component={PuzzleDetailContainer}/>
+              </Route>
               <Route path="new-puzzle" component={PuzzleFormContainer}/>
-              <Route path="puzzles/:puzzleId" component={PuzzleDetailContainer} />
-              <Route path="messages" component={MessageIndexContainer}/>
+
+              <Route path="messages">
+                <IndexRoute component={MessageIndexContainer}/>
+                <Route path=":messageId" component={MessageDetailContainer}/>
+              </Route>
               <Route path="new-message" component={MessageFormContainer}/>
-              <Route path="messages/:messageId" component={MessageDetailContainer} />
-              <Route path="schedule" component={ScheduleEventIndexContainer}/>
-              <Route path="schedule/:scheduleEventId" component={ScheduleEventDetailContainer} />
+
+              <Route path="schedules">
+                <IndexRoute component={ScheduleEventIndexContainer}/>
+                <Route path=":scheduleId" component={ScheduleEventDetailContainer}/>
+              </Route>
               <Route path="new-event" component={ScheduleEventFormContainer}/>
             </Route>
           </Route>

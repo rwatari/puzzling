@@ -34,6 +34,30 @@ class Api::MessagesController < ApplicationController
     end
   end
 
+  def update
+    @message = current_user.posts.where(id: params[:id]).first
+    unless @message
+      render json: ["No post found by current user"], status: 403
+      return
+    end
+
+    if @message.update_attributes(message_params)
+      render :show
+    else
+      render json: @message.errors.full_messages, status: 422
+    end
+  end
+
+  def destroy
+    @message = current_user.posts.where(id: params[:id]).first
+    if @message
+      @message.destroy!
+      render :show
+    else
+      render json: ["No post found by current user"], status: 403
+    end
+  end
+
   private
 
   def message_params

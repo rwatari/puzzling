@@ -2,9 +2,18 @@ import React from 'react';
 import {withRouter} from 'react-router';
 
 class MessageForm extends React.Component {
-  constructor() {
-    super();
-    this.state = {title: '', body: ''};
+  constructor(props) {
+    super(props);
+    if (props.message) {
+      this.state = {
+        title: props.message.title,
+        body: props.message.body,
+        id: props.message.id
+      };
+    } else {
+      this.state = {title: '', body: ''};
+    }
+
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -17,30 +26,47 @@ class MessageForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const {title, body} = this.state;
-    const {teamId} = this.props.params;
-    this.props.createMessage({
-      title,
-      body,
-      team_id: teamId
-    }).then(
+    const {
+      processForm,
+      params: {teamId},
+      router,
+      toggleForm
+    } = this.props;
+    processForm(
+      Object.assign({}, this.state, {team_id: teamId})
+    ).then(
       message => {
-        this.props.router.push(`/teams/${teamId}/messages/${message.id}`);
+        if (toggleForm) {
+          toggleForm();
+        } else {
+          router.push(`/teams/${teamId}/messages/${message.id}`);
+        }
       }
     );
   }
 
   render() {
-
+    const {errors, message, toggleForm} = this.props;
     const errorList =
     (<ul>
-      {this.props.errors.map((error, i) => (
+      {errors.map((error, i) => (
         <li key={i}>{error}</li>
       ))}
     </ul>);
+
+    let backToDetail;
+    if (message) {
+      backToDetail = (
+        <button onClick={toggleForm}>
+          <h4>...back to Message</h4>
+        </button>
+      );
+    }
+
     return (
       <div className="team-partial">
-        <h3>Add a Message</h3>
+        <h3>{(message) ? "Update Message" : "Add a message"}</h3>
+        {backToDetail}
         <div className="team-partial-content">
           <form onSubmit={this.handleSubmit}>
             <label>

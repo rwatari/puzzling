@@ -1,0 +1,25 @@
+.animation-switch {
+  position: relative;
+  width: 250px;
+  height: 180px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 0px $nav-color;
+  overflow: hidden;
+  z-index: 2;
+
+  & > li {
+    position: absolute;
+    margin: 0;
+    box-shadow: none;
+  }
+}
+
+.team-form-switch-enter {
+  transform: translate(100%);
+  z-index: 1;
+}
+.team-form-switch-enter.team-form-switch-enter-active {
+  transform: translate(0%);
+  transition: transform 500ms ease-in-out;
+}

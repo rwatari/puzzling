@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import TeamIndexItem from './team_index_item';
 import TeamForm from './team_form';
 import {isEmpty} from 'lodash';
@@ -42,7 +43,7 @@ class TeamIndex extends React.Component {
       );
     } else {
       formItem = (
-        <li key="form"
+        <li key="form-button"
           className="item-card add-card"
           onClick={this.showForm}>
           <h4>Add a Team</h4>
@@ -54,7 +55,13 @@ class TeamIndex extends React.Component {
       <div className="card-group">
         <h3>Teams</h3>
         <ul className="card-container">
-          {formItem}
+          <ReactCSSTransitionGroup
+            className="animation-switch"
+            transitionName="team-form-switch"
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={500}>
+            {formItem}
+          </ReactCSSTransitionGroup>
           {teamItems.reverse()}
         </ul>
       </div>

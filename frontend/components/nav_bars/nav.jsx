@@ -17,7 +17,7 @@ class Nav extends React.Component {
       <nav className="user-nav">
         <div className="logo">
           <Link to="/home">
-            <h1>Puzzling</h1>
+            <h1>Puzzling!</h1>
           </Link>
         </div>
         <div>

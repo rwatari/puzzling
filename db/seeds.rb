@@ -47,42 +47,42 @@ Membership.create([
 puzzle1 = Puzzle.create(
   team_id: team1.id,
   title: "Many crossings",
-  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  description: "Looks like a Nikoli bridges puzzle with some ability to cross paths. Someone with experience in this kind of logic puzzle should take a look.",
   solved: false
 )
 
 puzzle2 = Puzzle.create(
   team_id: team1.id,
   title: "Strange Tidings",
-  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  description: "Underwater themed Doctor Strange puzzle. Anyone familiar with the series?",
   solved: true
 )
 
 puzzle2 = Puzzle.create(
   team_id: team1.id,
   title: "Denizens of the Sky",
-  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  description: "Video puzzle. Most of the videos seem to have something to do with airplanes...",
   solved: true
 )
 
 puzzle3 = Puzzle.create(
   team_id: team1.id,
   title: "Choose Your Salad",
-  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  description: "Choose your own adventure javascript game with a salad theme? Working on this in room 342.",
   solved: false
 )
 
 puzzle4 = Puzzle.create(
   team_id: team1.id,
   title: "Toasting the Toast",
-  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  description: "???? There's lots of pictures of food in this one. Maybe we have to identify the kind of bread and it will lead us somewhere.",
   solved: true
 )
 
 puzzle5 = Puzzle.create(
   team_id: team2.id,
   title: "Another one bites the dust",
-  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  description: "Another audio puzzle :( There's been so many of them this hunt. Looks like each clip is a Queen song mixed with some other audio. Working on this remotely.",
   solved: false
 )
 

@@ -4,8 +4,7 @@ class Api::MessagesController < ApplicationController
   def index
     team = current_user
       .joined_teams
-      .where(id: params[:team_id])
-      .first
+      .find_by_id(params[:team_id])
 
     if team
       @messages = team.messages.includes(:author)
@@ -35,7 +34,7 @@ class Api::MessagesController < ApplicationController
   end
 
   def update
-    @message = current_user.posts.where(id: params[:id]).first
+    @message = current_user.posts.find_by_id(params[:id])
     unless @message
       render json: ["No post found by current user"], status: 403
       return
@@ -49,7 +48,7 @@ class Api::MessagesController < ApplicationController
   end
 
   def destroy
-    @message = current_user.posts.where(id: params[:id]).first
+    @message = current_user.posts.find_by_id(params[:id])
     if @message
       @message.destroy!
       render :show

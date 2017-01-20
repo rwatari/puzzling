@@ -11,8 +11,8 @@ class Api::TeamsController < ApplicationController
     @team = current_user
       .joined_teams
       .includes(:members, :admin)
-      .where(id: params[:id])
-      .first
+      .find_by_id(params[:id])
+      
     if @team
       render :show
     else

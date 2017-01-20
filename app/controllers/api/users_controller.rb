@@ -13,7 +13,9 @@ class Api::UsersController < ApplicationController
     team_membership_ids = Membership
       .where(team_id: params[:query][:team_id])
       .pluck(:user_id)
+
     users = User.where.not(id: team_membership_ids)
+    
     if params[:query][:string].present?
       @users = users.where("username ~ ?", params[:query][:string])
     else

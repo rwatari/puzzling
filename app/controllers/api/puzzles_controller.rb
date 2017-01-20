@@ -8,8 +8,8 @@ class Api::PuzzlesController < ApplicationController
     when "team"
       team = current_user
         .joined_teams
-        .where(id: params[:query][:team_id])
-        .first
+        .find_by_id(params[:query][:team_id])
+
       if team
         puzzles = team.puzzles
       else
@@ -25,10 +25,10 @@ class Api::PuzzlesController < ApplicationController
 
   def show
     @puzzle = Puzzle.find_by_id(params[:id])
-    if current_user.joined_teams.where(id: @puzzle.team_id).empty?
-      render json: ["Current user is not a member of this team"], status: 403
-    else
+    if current_user.joined_teams.find_by_id(@puzzle.team_id)
       render :show
+    else
+      render json: ["Current user is not a member of this team"], status: 403
     end
   end
 

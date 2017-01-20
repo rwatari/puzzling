@@ -1,6 +1,6 @@
 import React from 'react';
 import {isEmpty} from 'lodash';
-import {Link} from 'react-router';
+import {withRouter} from 'react-router';
 import ScheduleEventIndexItem from './schedule_event_index_item';
 
 class ScheduleEventIndex extends React.Component {
@@ -8,6 +8,7 @@ class ScheduleEventIndex extends React.Component {
     super();
     this.state = {activeTab: "future"};
     this.handleTabClick = this.handleTabClick.bind(this);
+    this.handleButtonClick = this.handleButtonClick.bind(this);
   }
 
   componentDidMount() {
@@ -32,6 +33,11 @@ class ScheduleEventIndex extends React.Component {
         }
       }
     };
+  }
+
+  handleButtonClick(e) {
+    e.preventDefault();
+    this.props.router.push(`/teams/${this.props.params.teamId}/new-event`);
   }
 
   render() {
@@ -62,9 +68,11 @@ class ScheduleEventIndex extends React.Component {
     return (
       <div className="team-partial">
         <h3>Schedule</h3>
-        <Link to={`/teams/${this.props.params.teamId}/new-event`}>
-          <h4>Add an Event</h4>
-        </Link>
+        <button onClick={this.handleButtonClick}
+          className="active-button">
+          <h4>Add an event</h4>
+        </button>
+        <br />
         <nav className="tab-index-nav">
           <ul>
             <li className={(this.state.activeTab === "future") ? "active-tab" : "inactive-tab"}
@@ -83,4 +91,4 @@ class ScheduleEventIndex extends React.Component {
   }
 }
 
-export default ScheduleEventIndex;
+export default withRouter(ScheduleEventIndex);

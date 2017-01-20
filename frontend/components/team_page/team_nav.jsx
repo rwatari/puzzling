@@ -1,7 +1,16 @@
 import React from 'react';
-import {Link} from 'react-router';
+import {Link, withRouter} from 'react-router';
 
-const TeamNav = ({team, location}) => {
+const TeamNav = ({team, location, router}) => {
+  const handleClick = path => e => {
+    e.preventDefault();
+    router.push(`/teams/${team.id}/${path}`);
+  };
+
+  const classNamer = path => (
+    location.pathname.includes(path) ? 'active-button active' : 'active-button'
+  );
+
   if (team) {
     return (
       <nav className="team-nav">
@@ -10,22 +19,22 @@ const TeamNav = ({team, location}) => {
         </Link>
         <ul className="team-nav-options">
           <li>
-            <Link to={`/teams/${team.id}/messages`}
-              className={(location.pathname.includes('message')) ? "active" : null}>
+            <button onClick={handleClick("messages")}
+              className={classNamer('message')}>
               <h4>Messages</h4>
-            </Link>
+            </button>
           </li>
           <li>
-            <Link to={`/teams/${team.id}/puzzles`}
-              className={(location.pathname.includes('puzzle')) ? "active" : null}>
+            <button onClick={handleClick("puzzles")}
+              className={classNamer('puzzle')}>
               <h4>Puzzles</h4>
-            </Link>
+            </button>
           </li>
           <li>
-            <Link to={`/teams/${team.id}/schedule`}
-              className={(location.pathname.includes('schedule')) ? "active" : null}>
+            <button onClick={handleClick("schedule")}
+              className={classNamer('schedule')}>
               <h4>Schedule</h4>
-            </Link>
+            </button>
           </li>
         </ul>
       </nav>
@@ -35,4 +44,4 @@ const TeamNav = ({team, location}) => {
   }
 };
 
-export default TeamNav;
+export default withRouter(TeamNav);

@@ -33,21 +33,33 @@ input, textarea {
 }
 
 button, input[type="submit"] {
-  color: black;
   padding: 5px;
   margin: 5px;
-  font-weight: bold;
   border-radius: 5px;
-  border: 1px solid black;
-  box-shadow: 0px 1px 0px 0px darkgrey;
+  color: white;
+  border: none;
+  background-color: $button-color;
+  box-shadow: 0px 1px 1px 0px black;
 
-  &:active {
+  &.active-button:active {
     box-shadow: none;
+    position: relative;
+    top: 1px;
   }
 
-  &:hover {
-    background-color: black;
-    color: white;
+  &.active-button:hover {
+    background-color: $hover-color;
+  }
+}
+
+button.inactive-button {
+  color: grey;
+  background: white;
+  cursor: default;
+  box-shadow: 0px 0px 2px 0px black inset;
+
+  &:active {
+    position: inherit;
   }
 }
 
@@ -57,12 +69,13 @@ nav.user-nav, nav.splash-nav {
   justify-content: space-between;
   font-weight: bold;
   align-items: center;
-  border-bottom: 3px solid black;
   position: fixed;
   height: 90px;
   flex-shrink: 0;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: $nav-color;
+  color: white;
+  box-shadow: 0px 1px 5px 1px black;
 }
 
 nav.user-nav > div, nav.splash-nav > div {
@@ -78,34 +91,21 @@ div.main-content {
   width: 900px;
   flex-grow: 1;
   align-self: center;
-  border: 1px solid lightgrey;
   border-radius: 10px;
   margin-top: 150px;
   margin-bottom: 50px;
+  box-shadow: 0px 0px 5px 0px $nav-color;
 }
 
 div.main-content > div {
   width: 90%;
   height: 100%;
-  border: 1px solid lightgrey;
-  border-radius: 10px;
   margin: 30px auto;
   display: flex;
   flex-direction: column;
+  background-color: white;
 }
 
 a:hover > h1, a:hover > h2, a:hover > h3, a:hover > h4  {
   text-decoration: underline;
-}
-
-.inactive-button {
-  color: grey;
-  border: 1px solid grey;
-
-  &:hover, &:active {
-    color: grey;
-    background-color: white;
-    box-shadow: 0 1px 0 0 darkgrey;
-    cursor: default;
-  }
 }

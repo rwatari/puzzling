@@ -26,7 +26,7 @@ class Nav extends React.Component {
               <h3>Hello {this.props.currentUser.username}!</h3>
             </li>
             <li>
-              <button onClick={this.handleLogOut}>Log Out</button>
+              <button className="active-button" onClick={this.handleLogOut}>Log Out</button>
             </li>
           </ul>
         </div>

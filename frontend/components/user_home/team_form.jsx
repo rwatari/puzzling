@@ -48,7 +48,7 @@ class TeamForm extends React.Component {
             ))}
           </ul>
           <input type="submit" value="Add team!"/>
-          <button onClick={this.props.hideForm}>Cancel</button>
+          <button className="active-button" onClick={this.props.hideForm}>Cancel</button>
         </form>
       </li>
     );

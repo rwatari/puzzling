@@ -1,6 +1,6 @@
 import React from 'react';
 import {isEmpty} from 'lodash';
-import {Link} from 'react-router';
+import {withRouter} from 'react-router';
 import PuzzleIndexItem from './puzzle_index_item';
 
 class PuzzleIndex extends React.Component {
@@ -8,6 +8,7 @@ class PuzzleIndex extends React.Component {
     super();
     this.state = {activeTab: "unsolved"};
     this.handleTabClick = this.handleTabClick.bind(this);
+    this.handleButtonClick = this.handleButtonClick.bind(this);
   }
 
   componentDidMount() {
@@ -32,6 +33,11 @@ class PuzzleIndex extends React.Component {
         }
       }
     };
+  }
+
+  handleButtonClick(e) {
+    e.preventDefault();
+    this.props.router.push(`/teams/${this.props.params.teamId}/new-puzzle`);
   }
 
   render() {
@@ -66,9 +72,11 @@ class PuzzleIndex extends React.Component {
     return (
       <div className="team-partial">
         <h3>Puzzles</h3>
-        <Link to={`/teams/${this.props.params.teamId}/new-puzzle`}>
+        <button onClick={this.handleButtonClick}
+          className="active-button">
           <h4>Add a puzzle</h4>
-        </Link>
+        </button>
+        <br />
         <nav className="tab-index-nav">
           <ul>
             <li className={(this.state.activeTab === "unsolved") ? "active-tab" : "inactive-tab"}
@@ -87,4 +95,4 @@ class PuzzleIndex extends React.Component {
   }
 }
 
-export default PuzzleIndex;
+export default withRouter(PuzzleIndex);

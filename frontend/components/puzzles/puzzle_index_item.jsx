@@ -28,7 +28,7 @@ class PuzzleIndexItem extends React.Component {
       );
     } else {
       followButton = (
-        <button onClick={this.handleFollow}>
+        <button className="active-button" onClick={this.handleFollow}>
           <h4>Follow</h4>
         </button>
       );

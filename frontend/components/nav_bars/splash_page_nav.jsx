@@ -47,15 +47,15 @@ class SplashPageNav extends React.Component {
         <div>
           <ul className="splash-nav-session">
             <li>
-              <button onClick={this.handleClick}
+              <button className="active-button" onClick={this.handleClick}
                 value="signup">Sign up</button>
             </li>
             <li>
-              <button onClick={this.handleClick}
+              <button className="active-button" onClick={this.handleClick}
                 value="login">Log In</button>
             </li>
             <li>
-              <button onClick={this.handleGuestDemo}>Guest Demo</button>
+              <button className="active-button" onClick={this.handleGuestDemo}>Guest Demo</button>
             </li>
           </ul>
         </div>

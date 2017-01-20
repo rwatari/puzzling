@@ -20,12 +20,12 @@
 }
 
 .item-card, .form-card {
-  width: 230px;
+  background-color: white;
+  width: 240px;
   height: 160px;
-  border: 1px solid darkgrey;
   border-radius: 10px;
   margin: 10px;
-  box-shadow: 0px 1px 0px 0px;
+  box-shadow: 0px 0px 5px 0px $nav-color;
 }
 
 .item-card:hover {
@@ -68,10 +68,6 @@
   text-align: center;
 }
 
-.form-card {
-  height: 100%;
-}
-
 .form-card form {
   margin: 10px;
 }
@@ -89,7 +85,6 @@
   font-size: 15px;
   padding: 0 7px;
   margin: 6px;
-  box-shadow: 0px 1px 0px 0px;
 }
 
 .form-card h5 {
@@ -128,7 +123,7 @@ div.user-icon-small {
   position: relative;
 
   & > h4 {
-    width: 225px;
+    width: 235px;
     height: 25px;
     position: absolute;
     top: 5px;
@@ -139,7 +134,7 @@ div.user-icon-small {
 
   .scroll-content {
     height: 121px;
-    width: 230px;
+    width: 239px;
     overflow-y: auto;
     margin: 34px 0 5px 0;
 

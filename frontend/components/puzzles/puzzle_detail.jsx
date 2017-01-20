@@ -47,7 +47,7 @@ class PuzzleDetail extends React.Component {
         );
       } else {
         followButton = (
-          <button onClick={this.handleFollow}>
+          <button className="active-button" onClick={this.handleFollow}>
             <h4>Follow</h4>
           </button>
         );
@@ -64,7 +64,7 @@ class PuzzleDetail extends React.Component {
             <nav className="detail-nav">
               <ul>
                 <li>
-                  <button onClick={this.handleSolve}>
+                  <button className="active-button" onClick={this.handleSolve}>
                     <h4>{(puzzle.solved) ? "Not Solved?" : "Solved?"}</h4>
                   </button>
                 </li>

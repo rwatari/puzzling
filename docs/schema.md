@@ -54,8 +54,8 @@ column name | data type | details
 id          | integer   | not null, primary key
 title       | string    | not null
 description | text      |
-start_date  | datetime  | not null
-end_date    | datetime  | not null
+start_datetime  | datetime  | not null
+end_datetime    | datetime  | not null
 team_id     | integer   | not null, foreign key (references teams), indexed
 
 ## comments (bonus)

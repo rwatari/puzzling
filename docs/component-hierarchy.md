@@ -1,13 +1,16 @@
 ## Component Hierarchy
 
-**AuthFormContainer**
- - AuthForm
 
 **App**
- - Home
- - NavBar
+ - NavContainer
+ - SplashPageNavContainer
+ - SplashPage
 
-**TeamContainer**
+**UserHomeContainer**
+ - TeamIndexContainer
+ - UserPuzzleIndexContainer
+
+**TeamHomeContainer**
  - TeamMessages
  - TeamPuzzles
  - TeamSchedule
@@ -56,15 +59,15 @@
 
 |Path   | Component   |
 |-------|-------------|
-| "/" | "AuthFormContainer" |
-| "/home" | "App" |
-| "/teams/:teamId" | "TeamContainer" |
+| "/" | "SplashPage" |
+| "/home" | "UserHomeContainer" |
+| "/teams/:teamId" | "TeamHomeContainer" |
 | "/messages" | "MessageIndexContainer" |
-| "/new-message" | "MessageFormContainer" |
 | "/messages/:messageId" | "MessageDetailContainer" |
+| "/new-message" | "MessageFormContainer" |
 | "/schedule" | "ScheduleContainer" |
-| "/new-schedule-event" | "ScheduleEventFormContainer" |
 | "/schedule/:scheduleEventId" | "ScheduleEventDetailContainer" |
+| "/new-event" | "ScheduleEventFormContainer" |
 | "/puzzles" | "PuzzleIndexContainer" |
-| "/new-puzzle" | "PuzzleFormContainer" |
 | "/puzzles/:puzzleId" | "PuzzleDetailContainer" |
+| "/new-puzzle" | "PuzzleFormContainer" |

@@ -56,7 +56,7 @@ const Root = ({store}) => {
 
               <Route path="schedules">
                 <IndexRoute component={ScheduleEventIndexContainer}/>
-                <Route path=":scheduleId" component={ScheduleEventDetailContainer}/>
+                <Route path=":scheduleEventId" component={ScheduleEventDetailContainer}/>
               </Route>
               <Route path="new-event" component={ScheduleEventFormContainer}/>
             </Route>

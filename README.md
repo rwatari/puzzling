@@ -30,17 +30,30 @@ Puzzling! is a full-stack web application built to manage teams for puzzle hunt 
 ![messages screenshot](docs/screenshots/message-board.png)
 
 #### Follow and mark puzzles as solved
+![puzzle index screenshot](docs/screenshots/puzzle-index.png)
 
+#### See who's working on the same puzzle
+![puzzle detail screenshot](docs/screenshots/puzzle-detail.png)
 
 #### Schedule team events!
 ![event form screenshot](docs/screenshots/event-form.png)
 
-## Future Directions for the Project
+## Implementation
 
-In addition to the features already implemented, I plan to continue work on this project.  The next steps for FresherNote are outlined below.
 
-### Search
 
-Searching notes is a standard feature of Evernote.  I plan to utilize the Fuse.js library to create a fuzzy search of notes and notebooks.  This search will look go through tags, note titles, notebook titles, and note content.
+## Future Directions
 
-### Direct Messaging
+As it stands now Puzzling! is currently just an MVP. The following features are planned to add full functionality to the site:
+
+### Comments
+
+Users should be able to comment directly on messages and puzzles to communicate efficiently. Comments will be set up with polymorphic associations in the backend to accommodate commenting on multiple types of items. Comments will be posted inline on the detail pages and will be fetched in real-time when the project is migrated to Rails 5.
+
+### Google Drive integration
+
+One of the best ways for groups to work remotely on puzzles is through real-time collaborative editing like in Google Docs/Sheets. Using Google's Realtime API, users will be able to work together on a Google Sheet for each puzzle.
+
+### Notifications
+
+On conversion to Rails 5, users will be notified when new puzzles are created in a team or if a puzzle they are working on is solved. Team members will also be able to make group notifications when posting on the message board.

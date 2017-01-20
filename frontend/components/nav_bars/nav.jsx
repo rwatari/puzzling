@@ -1,5 +1,6 @@
 import React from 'react';
 import {withRouter, Link} from 'react-router';
+import FontAwesome from 'react-fontawesome';
 
 class Nav extends React.Component {
   constructor() {
@@ -18,6 +19,7 @@ class Nav extends React.Component {
         <div className="logo">
           <Link to="/home">
             <h1>Puzzling!</h1>
+            <FontAwesome name='home' size='2x' />
           </Link>
         </div>
         <div>

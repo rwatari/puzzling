@@ -64,12 +64,12 @@
   }
 
   form {
-    width: 520px;
+    width: 550px;
     display: flex;
     flex-direction: column;
 
     input[type="text"], textarea {
-      width: 520px;
+      width: 550px;
       margin: 10px 0;
       padding: 10px;
       box-sizing: border-box;
@@ -96,7 +96,7 @@
 
         input {
           margin-left: 0;
-          width: 92%;
+          width: 260px;
         }
       }
     }

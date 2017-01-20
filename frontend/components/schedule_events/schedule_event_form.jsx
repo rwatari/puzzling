@@ -94,7 +94,8 @@ class ScheduleEventForm extends React.Component {
             </div>
             <br />
             {errorList}
-            <input type="submit" value="Submit"/>
+            <input className="active-button"
+              type="submit" value="Submit"/>
           </form>
         </div>
       </div>

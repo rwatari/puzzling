@@ -57,7 +57,8 @@ class PuzzleForm extends React.Component {
               value={this.state.description}/>
             <br />
             {errorList}
-            <input type="submit" value="Submit"/>
+            <input className="active-button"
+              type="submit" value="Submit"/>
           </form>
         </div>
       </div>

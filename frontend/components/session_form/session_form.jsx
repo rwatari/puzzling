@@ -49,7 +49,8 @@ class SessionForm extends React.Component {
           value={password}
           onChange={this.handleUpdate("password")}/>
         {errorList}
-        <input type="submit" value={buttonText}/>
+        <input className="active-button"
+          type="submit" value={buttonText}/>
       </form>
     );
   }

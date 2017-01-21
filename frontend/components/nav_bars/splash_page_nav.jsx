@@ -1,21 +1,21 @@
 import React from 'react';
 import SessionFormContainer from '../session_form/session_form_container';
 import {withRouter} from 'react-router';
-import Modal from 'react-modal';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class SplashPageNav extends React.Component {
   constructor() {
     super();
-    this.state = {formType: "login", modalOpen: false};
+    this.state = {formType: "login", formOpen: false};
     this.handleClick = this.handleClick.bind(this);
     this.handleGuestDemo = this.handleGuestDemo.bind(this);
-    this.closeModal = this.closeModal.bind(this);
+    this.hideForm = this.hideForm.bind(this);
   }
 
   handleClick(e) {
     e.preventDefault();
     this.setState({formType: e.target.value});
-    this.openModal();
+    this.showForm();
   }
 
   handleGuestDemo() {
@@ -24,20 +24,25 @@ class SplashPageNav extends React.Component {
     );
   }
 
-  openModal() {
-    this.setState({modalOpen: true});
+  showForm() {
+    this.setState({formOpen: true});
   }
 
-  closeModal() {
-    this.setState({modalOpen: false});
+  hideForm() {
+    this.setState({formOpen: false});
   }
 
   render() {
-    const form = (
-      <div className="session-form">
-        <SessionFormContainer formType={this.state.formType}/>
-      </div>
-    );
+    let form;
+    if (this.state.formOpen) {
+      form = (
+        <div key={this.state.formType} className="session-form">
+          <SessionFormContainer formType={this.state.formType}/>
+        </div>
+      );
+    } else {
+      form = <div key="close-form"></div>;
+    }
 
     return (
       <nav className="splash-nav">
@@ -59,13 +64,12 @@ class SplashPageNav extends React.Component {
             </li>
           </ul>
         </div>
-        <Modal
-          className="session-form-modal"
-          contentLabel="SessionForm"
-          isOpen={this.state.modalOpen}
-          onRequestClose={this.closeModal}>
+        <ReactCSSTransitionGroup
+          transitionName="session-form"
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={500}>
           {form}
-        </Modal>
+        </ReactCSSTransitionGroup>
       </nav>
     );
   }

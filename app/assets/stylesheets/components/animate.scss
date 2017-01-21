@@ -32,3 +32,19 @@
   transform: translate(0%);
   transition: transform 500ms ease-in-out;
 }
+
+.session-form-enter {
+  transform: translateY(-100%);
+}
+.session-form-enter.session-form-enter-active {
+  transform: translateY(0%);
+  transition: transform 500ms ease-in-out;
+}
+
+.session-form-leave {
+  transform: translateY(-100%);
+}
+.session-form-leave.session-form-enter-active {
+  transform: translateY(0%);
+  transition: transform 500ms ease-in-out;
+}

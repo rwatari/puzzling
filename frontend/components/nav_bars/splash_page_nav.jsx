@@ -1,6 +1,7 @@
 import React from 'react';
 import SessionFormContainer from '../session_form/session_form_container';
 import {withRouter} from 'react-router';
+import Modal from 'react-modal';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class SplashPageNav extends React.Component {
@@ -64,12 +65,21 @@ class SplashPageNav extends React.Component {
             </li>
           </ul>
         </div>
-        <ReactCSSTransitionGroup
-          transitionName="session-form"
-          transitionEnterTimeout={500}
-          transitionLeaveTimeout={500}>
-          {form}
-        </ReactCSSTransitionGroup>
+        <Modal
+          className="session-form-modal"
+          contentLabel="SessionForm"
+          isOpen={this.state.formOpen}
+          onRequestClose={this.hideForm}
+          style={{overlay: {backgroundColor: 'rgba(255, 255, 255, 0)'}}}>
+          <ReactCSSTransitionGroup
+            transitionName="session-form"
+            transitionAppear={true}
+            transitionAppearTimeout={400}
+            transitionEnterTimeout={400}
+            transitionLeaveTimeout={200}>
+            {form}
+          </ReactCSSTransitionGroup>
+        </Modal>
       </nav>
     );
   }

@@ -33,18 +33,20 @@
   transition: transform 500ms ease-in-out;
 }
 
-.session-form-enter {
+.session-form-enter, .session-form-appear {
   transform: translateY(-100%);
 }
-.session-form-enter.session-form-enter-active {
+.session-form-enter.session-form-enter-active,
+.session-form-appear.session-form-appear-active {
   transform: translateY(0%);
-  transition: transform 500ms ease-in-out;
+  transition: transform 400ms ease-in-out;
 }
 
 .session-form-leave {
-  transform: translateY(-100%);
-}
-.session-form-leave.session-form-enter-active {
   transform: translateY(0%);
-  transition: transform 500ms ease-in-out;
+  z-index: -1;
+}
+.session-form-leave.session-form-leave-active {
+  transform: translateY(-100%);
+  transition: transform 200ms ease-in-out;
 }

@@ -49,7 +49,7 @@ const UserIcon = ({username}) => {
 };
 ```
 
-#### Quickly see a snapshot of your team activity
+#### Quickly see a snapshot of your team's activity
 ![team home screenshot](docs/screenshots/team-home.png)
 
 Once in on a team's home page, the team's messages, unsolved puzzles, and upcoming events are available in the Redux store. This lets the user get a quick overview of where the team's state at any point. Users can only enter a team's page if they are a member of that team. The user is verified in the Rails controller and in React to prevent them from accessing a team's data.
